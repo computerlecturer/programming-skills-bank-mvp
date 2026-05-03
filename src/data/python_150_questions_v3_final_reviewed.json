@@ -1,0 +1,1338 @@
+[
+  {
+    "id": 1,
+    "chapter": "제1장 print와 기본 출력",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">print(&quot;Python&quot;)\nprint(&quot;Basic&quot;)</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p><code>print()</code>는 출력 후 기본적으로 줄바꿈을 한다.</p>",
+    "acceptedAnswer": "Python\nBasic"
+  },
+  {
+    "id": 2,
+    "chapter": "제1장 print와 기본 출력",
+    "questionHtml": "<p>다음 코드의 빈칸에 들어갈 알맞은 함수를 쓰시오.</p><pre><code class=\"language-python\">(    )(&quot;Hello&quot;)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>화면에 값을 출력할 때는 <code>print()</code> 함수를 사용한다.</p>",
+    "acceptedAnswer": "print"
+  },
+  {
+    "id": 3,
+    "chapter": "제1장 print와 기본 출력",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">print(&quot;A&quot;, &quot;B&quot;)</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p>쉼표로 여러 값을 출력하면 값 사이에 공백이 들어간다.</p>",
+    "acceptedAnswer": "A B"
+  },
+  {
+    "id": 4,
+    "chapter": "제1장 print와 기본 출력",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">print(&quot;A&quot;, end=&quot;&quot;)\nprint(&quot;B&quot;)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>end=\"\"</code>는 줄바꿈 없이 이어서 출력하게 한다.</p>",
+    "acceptedAnswer": "AB"
+  },
+  {
+    "id": 5,
+    "chapter": "제1장 print와 기본 출력",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">print(&quot;A&quot;, &quot;B&quot;, sep=&quot;-&quot;)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>sep</code>는 여러 값을 출력할 때 값 사이에 들어갈 문자를 지정한다.</p>",
+    "acceptedAnswer": "A-B"
+  },
+  {
+    "id": 6,
+    "chapter": "제1장 print와 기본 출력",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">print(&quot;Hi&quot; * 3)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>문자열에 정수를 곱하면 문자열이 반복된다.</p>",
+    "acceptedAnswer": "HiHiHi"
+  },
+  {
+    "id": 7,
+    "chapter": "제1장 print와 기본 출력",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">name = &quot;Kim&quot;\nprint(f&quot;Hello {name}&quot;)</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p>f-string은 중괄호 안의 변수 값을 문자열에 넣어 출력한다.</p>",
+    "acceptedAnswer": "Hello Kim"
+  },
+  {
+    "id": 8,
+    "chapter": "제1장 print와 기본 출력",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">print(&quot;1&quot;)\nprint(1)</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p>문자열 <code>\"1\"</code>과 정수 <code>1</code>은 출력 화면에서는 모두 1로 보인다.</p>",
+    "acceptedAnswer": "1\n1"
+  },
+  {
+    "id": 9,
+    "chapter": "제1장 print와 기본 출력",
+    "questionHtml": "<p>다음 코드의 빈칸에 들어갈 알맞은 옵션 이름을 쓰시오.</p><pre><code class=\"language-python\">print(&quot;A&quot;, &quot;B&quot;, (    )=&quot;/&quot;)</code></pre>\n<p>조건: 실행 결과가 <code>A/B</code>가 되도록 한다.</p>",
+    "type": "short",
+    "explanationHtml": "<p>출력값 사이의 구분 문자는 <code>sep</code> 옵션으로 지정한다.</p>",
+    "acceptedAnswer": "sep"
+  },
+  {
+    "id": 10,
+    "chapter": "제1장 print와 기본 출력",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">print(&quot;A\\nB&quot;)</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p><code>\\n</code>은 줄바꿈을 의미한다.</p>\n",
+    "acceptedAnswer": "A\nB"
+  },
+  {
+    "id": 11,
+    "chapter": "제2장 변수와 자료형",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = 10\nb = 20\na, b = b, a\nprint(a, b)</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p>파이썬은 <code>a, b = b, a</code>와 같이 두 변수 값을 한 번에 교환할 수 있다.</p>",
+    "acceptedAnswer": "20 10"
+  },
+  {
+    "id": 12,
+    "chapter": "제2장 변수와 자료형",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = 10\nprint(type(a).__name__)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>type(a)</code>는 변수 <code>a</code>의 자료형 객체를 확인한다. 여기에 <code>.__name__</code>을 붙이면 <code>&lt;class 'int'&gt;</code> 전체가 아니라 자료형 이름인 <code>int</code>만 출력된다.</p>",
+    "acceptedAnswer": "int"
+  },
+  {
+    "id": 13,
+    "chapter": "제2장 변수와 자료형",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = &quot;10&quot;\nb = &quot;20&quot;\nprint(a + b)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>문자열끼리 더하면 이어 붙인다.</p>",
+    "acceptedAnswer": "1020"
+  },
+  {
+    "id": 14,
+    "chapter": "제2장 변수와 자료형",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = [1, 2]\nb = a\nb.append(3)\nprint(a)</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p><code>b = a</code>는 같은 리스트를 참조하므로 <code>b</code>를 수정하면 <code>a</code>도 바뀐 것처럼 보인다.</p>",
+    "acceptedAnswer": "[1, 2, 3]",
+    "acceptedAnswers": [
+      "[1, 2, 3]",
+      "[1,2,3]"
+    ]
+  },
+  {
+    "id": 15,
+    "chapter": "제2장 변수와 자료형",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = True\nb = False\nprint(a and b)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>and</code>는 두 값이 모두 참일 때만 참이다.</p>",
+    "acceptedAnswer": "False"
+  },
+  {
+    "id": 16,
+    "chapter": "제2장 변수와 자료형",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = 3.5\nprint(type(a).__name__)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>소수점이 있는 수는 <code>float</code> 자료형이다.</p>",
+    "acceptedAnswer": "float"
+  },
+  {
+    "id": 17,
+    "chapter": "제2장 변수와 자료형",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">x, y, z = 1, 2, 3\nprint(x + z)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>여러 변수에 여러 값을 한 번에 대입할 수 있다.</p>",
+    "acceptedAnswer": "4"
+  },
+  {
+    "id": 18,
+    "chapter": "제2장 변수와 자료형",
+    "questionHtml": "<p>다음 코드에서 <code>10</code>을 문자열로 변환하는 함수명을 쓰시오.</p><pre><code class=\"language-python\">a = (    )(10)\nprint(a + &quot;점&quot;)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>값을 문자열로 바꿀 때는 <code>str()</code>을 사용한다.</p>",
+    "acceptedAnswer": "str"
+  },
+  {
+    "id": 19,
+    "chapter": "제2장 변수와 자료형",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = None\nprint(a is None)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>None</code> 여부를 확인할 때는 <code>is None</code>을 사용할 수 있다.</p>",
+    "acceptedAnswer": "True"
+  },
+  {
+    "id": 20,
+    "chapter": "제2장 변수와 자료형",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = int(&quot;7&quot;)\nb = 3\nprint(a + b)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>int(\"7\")</code>은 문자열 7을 정수 7로 변환한다.</p>",
+    "acceptedAnswer": "10"
+  },
+  {
+    "id": 21,
+    "chapter": "제3장 숫자 연산과 대입 연산",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">print(7 // 2)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>//</code>는 몫을 구하는 연산자이다.</p>",
+    "acceptedAnswer": "3"
+  },
+  {
+    "id": 22,
+    "chapter": "제3장 숫자 연산과 대입 연산",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">print(7 % 2)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>%</code>는 나머지를 구하는 연산자이다.</p>",
+    "acceptedAnswer": "1"
+  },
+  {
+    "id": 23,
+    "chapter": "제3장 숫자 연산과 대입 연산",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">print(2 ** 3)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>**</code>는 거듭제곱 연산자이다.</p>",
+    "acceptedAnswer": "8"
+  },
+  {
+    "id": 24,
+    "chapter": "제3장 숫자 연산과 대입 연산",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">print(2 + 3 * 4)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>곱셈이 덧셈보다 먼저 계산된다.</p>",
+    "acceptedAnswer": "14"
+  },
+  {
+    "id": 25,
+    "chapter": "제3장 숫자 연산과 대입 연산",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = 5\na += 3\nprint(a)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>a += 3</code>은 <code>a = a + 3</code>과 같다.</p>",
+    "acceptedAnswer": "8"
+  },
+  {
+    "id": 26,
+    "chapter": "제3장 숫자 연산과 대입 연산",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">q, r = divmod(9, 4)\nprint(q, r)</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p><code>divmod(9, 4)</code>는 몫 2와 나머지 1을 반환한다.</p>",
+    "acceptedAnswer": "2 1"
+  },
+  {
+    "id": 27,
+    "chapter": "제3장 숫자 연산과 대입 연산",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">print(5 &gt; 3 and 2 &gt; 4)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>앞 조건은 참이지만 뒤 조건이 거짓이므로 전체 결과는 거짓이다.</p>",
+    "acceptedAnswer": "False"
+  },
+  {
+    "id": 28,
+    "chapter": "제3장 숫자 연산과 대입 연산",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">print(not (3 == 3))</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>3 == 3</code>은 참이고, <code>not</code>을 적용하면 거짓이다.</p>",
+    "acceptedAnswer": "False"
+  },
+  {
+    "id": 29,
+    "chapter": "제3장 숫자 연산과 대입 연산",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">print(10 / 4)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>/</code>는 실수 나눗셈 결과를 반환한다.</p>",
+    "acceptedAnswer": "2.5"
+  },
+  {
+    "id": 30,
+    "chapter": "제3장 숫자 연산과 대입 연산",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = 4\nb = 6\nprint(max(a, b) - min(a, b))</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>최댓값 6에서 최솟값 4를 뺀다.</p>",
+    "acceptedAnswer": "2"
+  },
+  {
+    "id": 31,
+    "chapter": "제4장 문자열 처리",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">s = &quot;python&quot;\nprint(len(s))</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>len()</code>은 문자열의 길이를 구한다.</p>",
+    "acceptedAnswer": "6"
+  },
+  {
+    "id": 32,
+    "chapter": "제4장 문자열 처리",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">s = &quot;python&quot;\nprint(s[0])</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>문자열의 첫 번째 인덱스는 0이다.</p>",
+    "acceptedAnswer": "p"
+  },
+  {
+    "id": 33,
+    "chapter": "제4장 문자열 처리",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">s = &quot;python&quot;\nprint(s[1:4])</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>s[1:4]</code>는 1번 인덱스부터 3번 인덱스까지 자른다.</p>",
+    "acceptedAnswer": "yth"
+  },
+  {
+    "id": 34,
+    "chapter": "제4장 문자열 처리",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">s = &quot;PyThOn&quot;\nprint(s.lower())</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>lower()</code>는 문자열을 소문자로 바꾼다.</p>",
+    "acceptedAnswer": "python"
+  },
+  {
+    "id": 35,
+    "chapter": "제4장 문자열 처리",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">s = &quot;2026-test&quot;\nprint(s.replace(&quot;test&quot;, &quot;pass&quot;))</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>replace()</code>는 문자열의 일부를 다른 문자열로 바꾼다.</p>",
+    "acceptedAnswer": "2026-pass"
+  },
+  {
+    "id": 36,
+    "chapter": "제4장 문자열 처리",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">s = &quot;A,B,C&quot;\nprint(s.split(&quot;,&quot;))</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p><code>split(\",\")</code>은 쉼표를 기준으로 문자열을 나누어 리스트를 만든다.</p>",
+    "acceptedAnswer": "['A', 'B', 'C']",
+    "acceptedAnswers": [
+      "['A', 'B', 'C']",
+      "['A','B','C']",
+      "[\"A\", \"B\", \"C\"]",
+      "[\"A\",\"B\",\"C\"]"
+    ]
+  },
+  {
+    "id": 37,
+    "chapter": "제4장 문자열 처리",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">data = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;]\nprint(&quot;-&quot;.join(data))</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>join()</code>은 리스트의 문자열을 지정한 구분자로 이어 붙인다.</p>",
+    "acceptedAnswer": "A-B-C"
+  },
+  {
+    "id": 38,
+    "chapter": "제4장 문자열 처리",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">s = &quot;banana&quot;\nprint(s.find(&quot;na&quot;))</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>find()</code>는 찾은 문자열이 처음 등장하는 인덱스를 반환한다.</p>",
+    "acceptedAnswer": "2"
+  },
+  {
+    "id": 39,
+    "chapter": "제4장 문자열 처리",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">s = &quot;program&quot;\nprint(&quot;gram&quot; in s)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>in</code>은 문자열 포함 여부를 확인한다.</p>",
+    "acceptedAnswer": "True"
+  },
+  {
+    "id": 40,
+    "chapter": "제4장 문자열 처리",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = &quot;code&quot;\nprint(a[::-1])</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>[::-1]</code>은 문자열을 거꾸로 뒤집는다.</p>",
+    "acceptedAnswer": "edoc"
+  },
+  {
+    "id": 41,
+    "chapter": "제5장 리스트 기초",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = [10, 20, 30]\nprint(a[1])</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>리스트 인덱스는 0부터 시작하므로 1번 인덱스 값은 20이다.</p>",
+    "acceptedAnswer": "20"
+  },
+  {
+    "id": 42,
+    "chapter": "제5장 리스트 기초",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = [1, 2]\na.append(3)\nprint(a)</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p><code>append()</code>는 리스트 끝에 값을 추가한다.</p>",
+    "acceptedAnswer": "[1, 2, 3]",
+    "acceptedAnswers": [
+      "[1, 2, 3]",
+      "[1,2,3]"
+    ]
+  },
+  {
+    "id": 43,
+    "chapter": "제5장 리스트 기초",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = [1, 3]\na.insert(1, 2)\nprint(a)</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p><code>insert(1, 2)</code>는 1번 위치에 2를 삽입한다.</p>",
+    "acceptedAnswer": "[1, 2, 3]",
+    "acceptedAnswers": [
+      "[1, 2, 3]",
+      "[1,2,3]"
+    ]
+  },
+  {
+    "id": 44,
+    "chapter": "제5장 리스트 기초",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = [1, 2, 3]\nx = a.pop()\nprint(x)\nprint(a)</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p><code>pop()</code>은 마지막 값을 꺼내고 리스트에서 제거한다.</p>",
+    "acceptedAnswer": "3\n[1, 2]",
+    "acceptedAnswers": [
+      "3\n[1, 2]",
+      "3\n[1,2]"
+    ]
+  },
+  {
+    "id": 45,
+    "chapter": "제5장 리스트 기초",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = [3, 1, 2]\na.sort()\nprint(a[1])</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>sort()</code> 후 리스트는 [1, 2, 3]이 되므로 1번 인덱스는 2이다.</p>",
+    "acceptedAnswer": "2"
+  },
+  {
+    "id": 46,
+    "chapter": "제5장 리스트 기초",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = [3, 1, 2]\nb = sorted(a)\nprint(a)\nprint(b)</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p><code>sorted()</code>는 정렬된 새 리스트를 반환하고 원본 리스트는 그대로 둔다.</p>",
+    "acceptedAnswer": "[3, 1, 2]\n[1, 2, 3]",
+    "acceptedAnswers": [
+      "[3, 1, 2]\n[1, 2, 3]",
+      "[3, 1, 2]\n[1,2,3]",
+      "[3,1,2]\n[1, 2, 3]",
+      "[3,1,2]\n[1,2,3]"
+    ]
+  },
+  {
+    "id": 47,
+    "chapter": "제5장 리스트 기초",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = [10, 20, 30, 40]\nprint(a[1:3])</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p><code>a[1:3]</code>은 1번부터 2번 인덱스까지 잘라낸다.</p>",
+    "acceptedAnswer": "[20, 30]",
+    "acceptedAnswers": [
+      "[20, 30]",
+      "[20,30]"
+    ]
+  },
+  {
+    "id": 48,
+    "chapter": "제5장 리스트 기초",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = [1, 2, 3, 2]\na.remove(2)\nprint(a)</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p><code>remove(2)</code>는 처음 만나는 값 2 하나만 제거한다.</p>",
+    "acceptedAnswer": "[1, 3, 2]",
+    "acceptedAnswers": [
+      "[1, 3, 2]",
+      "[1,3,2]"
+    ]
+  },
+  {
+    "id": 49,
+    "chapter": "제5장 리스트 기초",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = [1, 2, 3]\nb = [x * 2 for x in a]\nprint(b)</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p>리스트 컴프리헨션으로 각 값을 2배로 만든다.</p>",
+    "acceptedAnswer": "[2, 4, 6]",
+    "acceptedAnswers": [
+      "[2, 4, 6]",
+      "[2,4,6]"
+    ]
+  },
+  {
+    "id": 50,
+    "chapter": "제5장 리스트 기초",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = [[1, 2], [3, 4]]\nprint(a[1][0])</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>a[1]</code>은 [3, 4]이고 그중 0번 값은 3이다.</p>",
+    "acceptedAnswer": "3"
+  },
+  {
+    "id": 51,
+    "chapter": "제6장 튜플과 set",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = (10, 20, 30)\nprint(a[2])</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>튜플도 인덱싱할 수 있다.</p>",
+    "acceptedAnswer": "30"
+  },
+  {
+    "id": 52,
+    "chapter": "제6장 튜플과 set",
+    "questionHtml": "<p>다음 코드에서 발생하는 오류 이름으로 가장 알맞은 것을 쓰시오.</p><pre><code class=\"language-python\">a = (1, 2, 3)\na[0] = 9</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>튜플은 값을 수정할 수 없으므로 <code>TypeError</code>가 발생한다.</p>",
+    "acceptedAnswer": "TypeError"
+  },
+  {
+    "id": 53,
+    "chapter": "제6장 튜플과 set",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a, b = (3, 5)\nprint(a + b)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>튜플의 값을 두 변수에 나누어 대입할 수 있다.</p>",
+    "acceptedAnswer": "8"
+  },
+  {
+    "id": 54,
+    "chapter": "제6장 튜플과 set",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = {1, 2}\na.add(3)\nprint(len(a))</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>set에 3을 추가하면 원소 개수는 3개가 된다.</p>",
+    "acceptedAnswer": "3"
+  },
+  {
+    "id": 55,
+    "chapter": "제6장 튜플과 set",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = {1, 1, 2, 2, 3}\nprint(len(a))</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>set은 중복 값을 하나로 처리한다.</p>",
+    "acceptedAnswer": "3"
+  },
+  {
+    "id": 56,
+    "chapter": "제6장 튜플과 set",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = {1, 2, 3}\nb = {2, 3, 4}\nprint(sorted(a &amp; b))</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p><code>&</code>는 교집합이고, <code>sorted()</code>로 출력 순서를 고정한다.</p>",
+    "acceptedAnswer": "[2, 3]",
+    "acceptedAnswers": [
+      "[2, 3]",
+      "[2,3]"
+    ]
+  },
+  {
+    "id": 57,
+    "chapter": "제6장 튜플과 set",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = (5)\nb = (5,)\nprint(type(a).__name__, type(b).__name__)</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p>원소가 하나인 튜플은 쉼표가 필요하다.</p>",
+    "acceptedAnswer": "int tuple"
+  },
+  {
+    "id": 58,
+    "chapter": "제6장 튜플과 set",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = {&quot;A&quot;, &quot;B&quot;}\nprint(&quot;A&quot; in a)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>in</code>으로 set에 값이 있는지 확인할 수 있다.</p>",
+    "acceptedAnswer": "True"
+  },
+  {
+    "id": 59,
+    "chapter": "제6장 튜플과 set",
+    "questionHtml": "<p>다음 코드의 빈칸에 들어갈 알맞은 함수를 쓰시오.</p><pre><code class=\"language-python\">a = [1, 1, 2, 3]\nb = (    )(a)\nprint(len(b))</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>중복을 제거하여 집합 자료형으로 만들 때는 <code>set()</code>을 사용한다.</p>",
+    "acceptedAnswer": "set"
+  },
+  {
+    "id": 60,
+    "chapter": "제6장 튜플과 set",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = tuple([1, 2, 3])\nprint(a[-1])</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>tuple()</code>은 리스트를 튜플로 변환한다.</p>",
+    "acceptedAnswer": "3"
+  },
+  {
+    "id": 61,
+    "chapter": "제7장 딕셔너리 기초",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">d = {&quot;kor&quot;: 90, &quot;eng&quot;: 80}\nprint(d[&quot;kor&quot;])</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>딕셔너리는 key를 이용해 value를 가져온다.</p>",
+    "acceptedAnswer": "90"
+  },
+  {
+    "id": 62,
+    "chapter": "제7장 딕셔너리 기초",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">d = {&quot;A&quot;: 1}\nprint(d.get(&quot;B&quot;, 0))</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>get()</code>의 두 번째 값은 key가 없을 때 반환할 기본값이다.</p>",
+    "acceptedAnswer": "0"
+  },
+  {
+    "id": 63,
+    "chapter": "제7장 딕셔너리 기초",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">d = {&quot;A&quot;: 10, &quot;B&quot;: 20}\nprint(list(d.keys())[1])</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>딕셔너리는 입력된 순서를 유지하므로 두 번째 key는 B이다.</p>",
+    "acceptedAnswer": "B"
+  },
+  {
+    "id": 64,
+    "chapter": "제7장 딕셔너리 기초",
+    "questionHtml": "<p>다음 코드의 빈칸에 들어갈 알맞은 메서드명을 쓰시오.</p><pre><code class=\"language-python\">d = {&quot;kim&quot;: 90, &quot;lee&quot;: 80, &quot;park&quot;: 90}\nresult = [k for k, v in d.(    ) if v == 90]\nprint(result)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>key와 value를 함께 반복할 때는 <code>items()</code>를 사용한다.</p>",
+    "acceptedAnswer": "items"
+  },
+  {
+    "id": 65,
+    "chapter": "제7장 딕셔너리 기초",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">d = {&quot;A&quot;: 1}\nd[&quot;B&quot;] = 2\nprint(d[&quot;A&quot;] + d[&quot;B&quot;])</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>딕셔너리에 새 key와 value를 추가할 수 있다.</p>",
+    "acceptedAnswer": "3"
+  },
+  {
+    "id": 66,
+    "chapter": "제7장 딕셔너리 기초",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">d = {&quot;A&quot;: 1, &quot;B&quot;: 2}\nd.pop(&quot;A&quot;)\nprint(d)</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p><code>pop(\"A\")</code>는 key A에 해당하는 항목을 제거한다.</p>",
+    "acceptedAnswer": "{'B': 2}",
+    "acceptedAnswers": [
+      "{'B': 2}",
+      "{'B':2}",
+      "{\"B\": 2}",
+      "{\"B\":2}"
+    ]
+  },
+  {
+    "id": 67,
+    "chapter": "제7장 딕셔너리 기초",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">d = {&quot;A&quot;: 1, &quot;B&quot;: 2}\nprint(&quot;A&quot; in d)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>딕셔너리에서 <code>in</code>은 key의 포함 여부를 검사한다.</p>",
+    "acceptedAnswer": "True"
+  },
+  {
+    "id": 68,
+    "chapter": "제7장 딕셔너리 기초",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">d = {&quot;A&quot;: 1, &quot;B&quot;: 2}\nprint(2 in d.values())</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>value 포함 여부는 <code>values()</code>를 사용해 확인할 수 있다.</p>",
+    "acceptedAnswer": "True"
+  },
+  {
+    "id": 69,
+    "chapter": "제7장 딕셔너리 기초",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">d = {&quot;A&quot;: 1, &quot;B&quot;: 2, &quot;C&quot;: 3}\nprint(len(d))</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>len()</code>은 딕셔너리의 key-value 쌍 개수를 반환한다.</p>",
+    "acceptedAnswer": "3"
+  },
+  {
+    "id": 70,
+    "chapter": "제7장 딕셔너리 기초",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">data = [&quot;A&quot;, &quot;B&quot;]\nd = {x: len(x) for x in data}\nprint(d[&quot;A&quot;])</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>딕셔너리 컴프리헨션으로 key와 value를 만들 수 있다.</p>",
+    "acceptedAnswer": "1"
+  },
+  {
+    "id": 71,
+    "chapter": "제8장 인덱싱과 슬라이싱",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = [10, 20, 30]\nprint(a[-1])</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>-1</code>은 마지막 원소를 의미한다.</p>",
+    "acceptedAnswer": "30"
+  },
+  {
+    "id": 72,
+    "chapter": "제8장 인덱싱과 슬라이싱",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">s = &quot;abcd&quot;\nprint(s[::-1])</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>[::-1]</code>은 전체를 역순으로 자른다.</p>",
+    "acceptedAnswer": "dcba"
+  },
+  {
+    "id": 73,
+    "chapter": "제8장 인덱싱과 슬라이싱",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = [0, 1, 2, 3, 4]\nprint(a[1:4])</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p>끝 인덱스 4는 포함되지 않는다.</p>",
+    "acceptedAnswer": "[1, 2, 3]",
+    "acceptedAnswers": [
+      "[1, 2, 3]",
+      "[1,2,3]"
+    ]
+  },
+  {
+    "id": 74,
+    "chapter": "제8장 인덱싱과 슬라이싱",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">s = &quot;python&quot;\nprint(s[:3])</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>시작 인덱스를 생략하면 처음부터 자른다.</p>",
+    "acceptedAnswer": "pyt"
+  },
+  {
+    "id": 75,
+    "chapter": "제8장 인덱싱과 슬라이싱",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = [0, 1, 2, 3, 4, 5]\nprint(a[::2])</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p><code>[::2]</code>는 2칸씩 건너뛴다.</p>",
+    "acceptedAnswer": "[0, 2, 4]",
+    "acceptedAnswers": [
+      "[0, 2, 4]",
+      "[0,2,4]"
+    ]
+  },
+  {
+    "id": 76,
+    "chapter": "제8장 인덱싱과 슬라이싱",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = [10, 20, 30, 40, 50]\nprint(a[-3:-1])</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p><code>-3</code>부터 <code>-2</code> 위치까지 잘라낸다.</p>",
+    "acceptedAnswer": "[30, 40]",
+    "acceptedAnswers": [
+      "[30, 40]",
+      "[30,40]"
+    ]
+  },
+  {
+    "id": 77,
+    "chapter": "제8장 인덱싱과 슬라이싱",
+    "questionHtml": "<p>다음 코드의 빈칸에 들어갈 알맞은 인덱스를 쓰시오.</p><pre><code class=\"language-python\">a = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;]\nprint(a[(    )])</code></pre>\n<p>조건: 마지막 값인 <code>C</code>가 출력되도록 한다.</p>",
+    "type": "short",
+    "explanationHtml": "<p>마지막 원소는 <code>-1</code> 인덱스로 접근할 수 있다.</p>",
+    "acceptedAnswer": "-1"
+  },
+  {
+    "id": 78,
+    "chapter": "제8장 인덱싱과 슬라이싱",
+    "questionHtml": "<p>다음 코드의 빈칸에 들어갈 알맞은 슬라이싱 표기를 쓰시오.</p><pre><code class=\"language-python\">s = &quot;abc&quot;\nprint(s[(    )])</code></pre>\n<p>조건: 실행 결과가 <code>cba</code>가 되도록 한다.</p>",
+    "type": "short",
+    "explanationHtml": "<p>문자열 전체를 거꾸로 뒤집을 때는 <code>::-1</code>을 사용한다.</p>",
+    "acceptedAnswer": "::-1"
+  },
+  {
+    "id": 79,
+    "chapter": "제8장 인덱싱과 슬라이싱",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = [[&quot;A&quot;, &quot;B&quot;], [&quot;C&quot;, &quot;D&quot;]]\nprint(a[0][1])</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>a[0]</code>은 [\"A\", \"B\"]이고 그중 1번 값은 B이다.</p>",
+    "acceptedAnswer": "B"
+  },
+  {
+    "id": 80,
+    "chapter": "제8장 인덱싱과 슬라이싱",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = [1, 2, 3, 4]\na[1:3] = [8, 9]\nprint(a)</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p>슬라이스 대입으로 1번부터 2번 위치의 값이 바뀐다.</p>",
+    "acceptedAnswer": "[1, 8, 9, 4]",
+    "acceptedAnswers": [
+      "[1, 8, 9, 4]",
+      "[1,8,9,4]"
+    ]
+  },
+  {
+    "id": 81,
+    "chapter": "제9장 조건문",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">score = 85\nif score &gt;= 90:\n    print(&quot;A&quot;)\nelif score &gt;= 80:\n    print(&quot;B&quot;)\nelse:\n    print(&quot;C&quot;)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>85는 80 이상 90 미만이므로 B가 출력된다.</p>",
+    "acceptedAnswer": "B"
+  },
+  {
+    "id": 82,
+    "chapter": "제9장 조건문",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">x = 5\nprint(1 &lt; x &lt; 10)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>파이썬은 비교 연산자를 연속해서 사용할 수 있다.</p>",
+    "acceptedAnswer": "True"
+  },
+  {
+    "id": 83,
+    "chapter": "제9장 조건문",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">age = 17\nresult = &quot;성인&quot; if age &gt;= 20 else &quot;미성년&quot;\nprint(result)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>조건식이 거짓이므로 else 쪽 값이 선택된다.</p>",
+    "acceptedAnswer": "미성년"
+  },
+  {
+    "id": 84,
+    "chapter": "제9장 조건문",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = 10\nif a &gt; 5 and a &lt; 20:\n    print(&quot;OK&quot;)\nelse:\n    print(&quot;NO&quot;)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>두 조건을 모두 만족하므로 OK가 출력된다.</p>",
+    "acceptedAnswer": "OK"
+  },
+  {
+    "id": 85,
+    "chapter": "제9장 조건문",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">level = 2\nif level == 1 or level == 2:\n    print(&quot;pass&quot;)\nelse:\n    print(&quot;fail&quot;)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>or</code>는 둘 중 하나만 참이어도 전체가 참이다.</p>",
+    "acceptedAnswer": "pass"
+  },
+  {
+    "id": 86,
+    "chapter": "제9장 조건문",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">x = 3\nif x &gt; 0:\n    if x % 2 == 1:\n        print(&quot;positive odd&quot;)</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p>3은 양수이면서 홀수이다.</p>",
+    "acceptedAnswer": "positive odd"
+  },
+  {
+    "id": 87,
+    "chapter": "제9장 조건문",
+    "questionHtml": "<p>다음 코드의 빈칸에 들어갈 알맞은 키워드를 쓰시오.</p><pre><code class=\"language-python\">x = 0\nif x &gt; 0:\n    print(&quot;plus&quot;)\n(    ) x == 0:\n    print(&quot;zero&quot;)\nelse:\n    print(&quot;minus&quot;)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>여러 조건을 이어서 검사할 때는 <code>elif</code>를 사용한다.</p>",
+    "acceptedAnswer": "elif"
+  },
+  {
+    "id": 88,
+    "chapter": "제9장 조건문",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = []\nif a:\n    print(&quot;Y&quot;)\nelse:\n    print(&quot;N&quot;)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>빈 리스트는 조건식에서 거짓으로 처리된다.</p>",
+    "acceptedAnswer": "N"
+  },
+  {
+    "id": 89,
+    "chapter": "제9장 조건문",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">x = None\nif x is None:\n    print(&quot;empty&quot;)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>is None</code>으로 None 값을 확인할 수 있다.</p>",
+    "acceptedAnswer": "empty"
+  },
+  {
+    "id": 90,
+    "chapter": "제9장 조건문",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = 7\nif a % 2 == 0:\n    print(&quot;even&quot;)\nelse:\n    print(&quot;odd&quot;)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>7은 2로 나눈 나머지가 1이므로 홀수이다.</p>",
+    "acceptedAnswer": "odd"
+  },
+  {
+    "id": 91,
+    "chapter": "제10장 반복문 for / while",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">for i in range(3):\n    print(i, end=&quot;&quot;)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>range(3)</code>은 0, 1, 2를 만든다.</p>",
+    "acceptedAnswer": "012"
+  },
+  {
+    "id": 92,
+    "chapter": "제10장 반복문 for / while",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">i = 1\nwhile i &lt;= 3:\n    print(i, end=&quot;&quot;)\n    i += 1</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>i가 1, 2, 3일 때 출력된다.</p>",
+    "acceptedAnswer": "123"
+  },
+  {
+    "id": 93,
+    "chapter": "제10장 반복문 for / while",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">for i in range(1, 5):\n    if i == 3:\n        break\n    print(i, end=&quot;&quot;)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>i가 3이 되면 반복문을 종료한다.</p>",
+    "acceptedAnswer": "12"
+  },
+  {
+    "id": 94,
+    "chapter": "제10장 반복문 for / while",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">for i in range(1, 5):\n    if i % 2 == 0:\n        continue\n    print(i, end=&quot;&quot;)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>짝수는 건너뛰고 홀수만 출력한다.</p>",
+    "acceptedAnswer": "13"
+  },
+  {
+    "id": 95,
+    "chapter": "제10장 반복문 for / while",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">for i in range(2):\n    for j in range(2):\n        print(i + j, end=&quot;&quot;)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>출력 순서는 (0,0), (0,1), (1,0), (1,1)의 합이다.</p>",
+    "acceptedAnswer": "0112"
+  },
+  {
+    "id": 96,
+    "chapter": "제10장 반복문 for / while",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">total = 0\nfor i in range(1, 4):\n    total += i\nprint(total)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>1+2+3을 계산한다.</p>",
+    "acceptedAnswer": "6"
+  },
+  {
+    "id": 97,
+    "chapter": "제10장 반복문 for / while",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">for ch in &quot;AB&quot;:\n    print(ch, end=&quot;/&quot;)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>문자열은 문자 단위로 반복할 수 있다.</p>",
+    "acceptedAnswer": "A/B/"
+  },
+  {
+    "id": 98,
+    "chapter": "제10장 반복문 for / while",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">for i in range(3):\n    pass\nelse:\n    print(&quot;end&quot;)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>반복문이 정상적으로 끝나면 <code>else</code>가 실행된다.</p>",
+    "acceptedAnswer": "end"
+  },
+  {
+    "id": 99,
+    "chapter": "제10장 반복문 for / while",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">result = 1\nfor i in range(1, 4):\n    result *= i\nprint(result)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>1×2×3의 결과를 출력한다.</p>",
+    "acceptedAnswer": "6"
+  },
+  {
+    "id": 100,
+    "chapter": "제10장 반복문 for / while",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">data = [2, 4, 6]\ncount = 0\nfor x in data:\n    if x &gt; 3:\n        count += 1\nprint(count)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>3보다 큰 값은 4와 6이므로 2개이다.</p>",
+    "acceptedAnswer": "2"
+  },
+  {
+    "id": 101,
+    "chapter": "제11장 range, enumerate, zip",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">print(list(range(4)))</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p><code>range(4)</code>는 0부터 3까지의 값을 만든다.</p>",
+    "acceptedAnswer": "[0, 1, 2, 3]",
+    "acceptedAnswers": [
+      "[0, 1, 2, 3]",
+      "[0,1,2,3]"
+    ]
+  },
+  {
+    "id": 102,
+    "chapter": "제11장 range, enumerate, zip",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">print(list(range(2, 7, 2)))</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p><code>range(2, 7, 2)</code>는 2부터 6까지 2씩 증가한다.</p>",
+    "acceptedAnswer": "[2, 4, 6]",
+    "acceptedAnswers": [
+      "[2, 4, 6]",
+      "[2,4,6]"
+    ]
+  },
+  {
+    "id": 103,
+    "chapter": "제11장 range, enumerate, zip",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">data = [&quot;A&quot;, &quot;B&quot;]\nfor i, v in enumerate(data):\n    print(i, v, end=&quot;/&quot;)</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p><code>enumerate()</code>는 인덱스와 값을 함께 반환한다.</p>",
+    "acceptedAnswer": "0 A/1 B/"
+  },
+  {
+    "id": 104,
+    "chapter": "제11장 range, enumerate, zip",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = [1, 2]\nb = [&quot;A&quot;, &quot;B&quot;]\nprint(list(zip(a, b)))</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p><code>zip()</code>은 같은 위치의 값을 묶는다.</p>",
+    "acceptedAnswer": "[(1, 'A'), (2, 'B')]",
+    "acceptedAnswers": [
+      "[(1, 'A'), (2, 'B')]",
+      "[(1,'A'),(2,'B')]",
+      "[(1, \"A\"), (2, \"B\")]",
+      "[(1,\"A\"),(2,\"B\")]"
+    ]
+  },
+  {
+    "id": 105,
+    "chapter": "제11장 range, enumerate, zip",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">for i in reversed(range(1, 4)):\n    print(i, end=&quot;&quot;)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>reversed(range(1, 4))</code>는 3, 2, 1 순서로 반복한다.</p>",
+    "acceptedAnswer": "321"
+  },
+  {
+    "id": 106,
+    "chapter": "제11장 range, enumerate, zip",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">print(list(range(5, 1, -2)))</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p>5부터 2보다 클 때까지 2씩 감소한다.</p>",
+    "acceptedAnswer": "[5, 3]",
+    "acceptedAnswers": [
+      "[5, 3]",
+      "[5,3]"
+    ]
+  },
+  {
+    "id": 107,
+    "chapter": "제11장 range, enumerate, zip",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">data = [10, 20, 30]\nfor i, v in enumerate(data, start=1):\n    if i == 2:\n        print(v)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>start=1</code>이면 인덱스가 1부터 시작하므로 i가 2일 때 값은 20이다.</p>",
+    "acceptedAnswer": "20"
+  },
+  {
+    "id": 108,
+    "chapter": "제11장 range, enumerate, zip",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = [1, 2, 3]\nb = [&quot;A&quot;, &quot;B&quot;]\nprint(len(list(zip(a, b))))</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>zip()</code>은 짧은 리스트 길이에 맞춰 묶는다.</p>",
+    "acceptedAnswer": "2"
+  },
+  {
+    "id": 109,
+    "chapter": "제11장 range, enumerate, zip",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">result = []\nfor i in range(1, 6):\n    if i % 2 == 0:\n        result.append(i)\nprint(result)</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p>1부터 5까지 중 짝수만 리스트에 추가한다.</p>",
+    "acceptedAnswer": "[2, 4]",
+    "acceptedAnswers": [
+      "[2, 4]",
+      "[2,4]"
+    ]
+  },
+  {
+    "id": 110,
+    "chapter": "제11장 range, enumerate, zip",
+    "questionHtml": "<p>다음 코드의 빈칸에 들어갈 알맞은 함수를 쓰시오.</p><pre><code class=\"language-python\">for i, v in (    )([&quot;A&quot;, &quot;B&quot;]):\n    print(i, v)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>반복하면서 인덱스와 값을 함께 얻을 때는 <code>enumerate()</code>를 사용한다.</p>",
+    "acceptedAnswer": "enumerate"
+  },
+  {
+    "id": 111,
+    "chapter": "제12장 함수와 return",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">def add(a, b):\n    return a + b\n\nprint(add(2, 3))</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>return</code>은 함수의 결과값을 돌려준다.</p>",
+    "acceptedAnswer": "5"
+  },
+  {
+    "id": 112,
+    "chapter": "제12장 함수와 return",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">def test():\n    print(&quot;A&quot;)\n\nx = test()\nprint(x)</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p>return이 없는 함수는 <code>None</code>을 반환한다.</p>",
+    "acceptedAnswer": "A\nNone"
+  },
+  {
+    "id": 113,
+    "chapter": "제12장 함수와 return",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">def greet(name=&quot;Kim&quot;):\n    return name + &quot;님&quot;\n\nprint(greet())</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>인수를 전달하지 않으면 기본값 <code>Kim</code>이 사용된다.</p>",
+    "acceptedAnswer": "Kim님"
+  },
+  {
+    "id": 114,
+    "chapter": "제12장 함수와 return",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">def calc(a, b):\n    return a - b\n\nprint(calc(b=3, a=10))</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>키워드 인수는 매개변수 이름을 기준으로 전달된다.</p>",
+    "acceptedAnswer": "7"
+  },
+  {
+    "id": 115,
+    "chapter": "제12장 함수와 return",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">x = 10\n\ndef test():\n    x = 5\n    return x\n\nprint(test())\nprint(x)</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p>함수 안의 x는 지역변수이고 바깥 x와 다르다.</p>",
+    "acceptedAnswer": "5\n10"
+  },
+  {
+    "id": 116,
+    "chapter": "제12장 함수와 return",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">def calc(a, b):\n    return a + b, a * b\n\nprint(calc(2, 3))</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p>쉼표로 여러 값을 반환하면 튜플로 반환된다.</p>",
+    "acceptedAnswer": "(5, 6)",
+    "acceptedAnswers": [
+      "(5, 6)",
+      "(5,6)"
+    ]
+  },
+  {
+    "id": 117,
+    "chapter": "제12장 함수와 return",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">def fact(n):\n    if n == 1:\n        return 1\n    return n * fact(n - 1)\n\nprint(fact(4))</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>4×3×2×1을 재귀적으로 계산한다.</p>",
+    "acceptedAnswer": "24"
+  },
+  {
+    "id": 118,
+    "chapter": "제12장 함수와 return",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">f = lambda x: x * x\nprint(f(5))</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>lambda 함수는 간단한 익명 함수를 만들 때 사용한다.</p>",
+    "acceptedAnswer": "25"
+  },
+  {
+    "id": 119,
+    "chapter": "제12장 함수와 return",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">def add_item(data):\n    data.append(3)\n\nnums = [1, 2]\nadd_item(nums)\nprint(nums)</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p>리스트는 함수에 전달된 뒤 내부에서 수정될 수 있다.</p>",
+    "acceptedAnswer": "[1, 2, 3]",
+    "acceptedAnswers": [
+      "[1, 2, 3]",
+      "[1,2,3]"
+    ]
+  },
+  {
+    "id": 120,
+    "chapter": "제12장 함수와 return",
+    "questionHtml": "<p>다음 코드에서 발생하는 오류 이름으로 가장 알맞은 것을 쓰시오.</p><pre><code class=\"language-python\">def add(a, b):\n    return a + b\n\nprint(add(1))</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>필요한 인수가 부족하므로 <code>TypeError</code>가 발생한다.</p>",
+    "acceptedAnswer": "TypeError"
+  },
+  {
+    "id": 121,
+    "chapter": "제13장 리스트 컴프리헨션과 응용",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = [1, 2, 3]\nb = [x ** 2 for x in a]\nprint(b)</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p>각 원소를 제곱하여 새 리스트를 만든다.</p>",
+    "acceptedAnswer": "[1, 4, 9]",
+    "acceptedAnswers": [
+      "[1, 4, 9]",
+      "[1,4,9]"
+    ]
+  },
+  {
+    "id": 122,
+    "chapter": "제13장 리스트 컴프리헨션과 응용",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = [1, 2, 3, 4]\nb = [x for x in a if x % 2 == 0]\nprint(b)</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p>짝수만 선택한다.</p>",
+    "acceptedAnswer": "[2, 4]",
+    "acceptedAnswers": [
+      "[2, 4]",
+      "[2,4]"
+    ]
+  },
+  {
+    "id": 123,
+    "chapter": "제13장 리스트 컴프리헨션과 응용",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">result = [x + y for x in &quot;AB&quot; for y in &quot;12&quot;]\nprint(result)</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p>이중 반복으로 A1, A2, B1, B2 순서의 리스트를 만든다.</p>",
+    "acceptedAnswer": "['A1', 'A2', 'B1', 'B2']",
+    "acceptedAnswers": [
+      "['A1', 'A2', 'B1', 'B2']",
+      "['A1','A2','B1','B2']",
+      "[\"A1\", \"A2\", \"B1\", \"B2\"]",
+      "[\"A1\",\"A2\",\"B1\",\"B2\"]"
+    ]
+  },
+  {
+    "id": 124,
+    "chapter": "제13장 리스트 컴프리헨션과 응용",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = [1, 2, 3]\nb = [&quot;짝&quot; if x % 2 == 0 else &quot;홀&quot; for x in a]\nprint(b)</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p>조건 표현식을 컴프리헨션 내부에서 사용할 수 있다.</p>",
+    "acceptedAnswer": "['홀', '짝', '홀']",
+    "acceptedAnswers": [
+      "['홀', '짝', '홀']",
+      "['홀','짝','홀']",
+      "[\"홀\", \"짝\", \"홀\"]",
+      "[\"홀\",\"짝\",\"홀\"]"
+    ]
+  },
+  {
+    "id": 125,
+    "chapter": "제13장 리스트 컴프리헨션과 응용",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = [&quot;A&quot;, &quot;BB&quot;]\nd = {x: len(x) for x in a}\nprint(d[&quot;BB&quot;])</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>문자열을 key로, 문자열 길이를 value로 갖는 딕셔너리를 만든다.</p>",
+    "acceptedAnswer": "2"
+  },
+  {
+    "id": 126,
+    "chapter": "제13장 리스트 컴프리헨션과 응용",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">a = [1, 1, 2, 3]\nb = {x * 2 for x in a}\nprint(len(b))</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>set 컴프리헨션은 중복을 제거한다. 결과 원소는 2, 4, 6이다.</p>",
+    "acceptedAnswer": "3"
+  },
+  {
+    "id": 127,
+    "chapter": "제13장 리스트 컴프리헨션과 응용",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">s = &quot;abc&quot;\nprint(&quot;&quot;.join([ch.upper() for ch in s]))</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>각 문자를 대문자로 바꾼 뒤 이어 붙인다.</p>",
+    "acceptedAnswer": "ABC"
+  },
+  {
+    "id": 128,
+    "chapter": "제13장 리스트 컴프리헨션과 응용",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">data = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;]\nresult = [v for i, v in enumerate(data) if i % 2 == 0]\nprint(result)</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p>인덱스가 0 또는 2인 값만 선택한다.</p>",
+    "acceptedAnswer": "['A', 'C']",
+    "acceptedAnswers": [
+      "['A', 'C']",
+      "['A','C']",
+      "[\"A\", \"C\"]",
+      "[\"A\",\"C\"]"
+    ]
+  },
+  {
+    "id": 129,
+    "chapter": "제13장 리스트 컴프리헨션과 응용",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">matrix = [[1, 2], [3, 4]]\nflat = [x for row in matrix for x in row]\nprint(flat)</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p>2차원 리스트를 한 줄 리스트로 펼친다.</p>",
+    "acceptedAnswer": "[1, 2, 3, 4]",
+    "acceptedAnswers": [
+      "[1, 2, 3, 4]",
+      "[1,2,3,4]"
+    ]
+  },
+  {
+    "id": 130,
+    "chapter": "제13장 리스트 컴프리헨션과 응용",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">scores = {&quot;kim&quot;: 90, &quot;lee&quot;: 80, &quot;park&quot;: 90}\nresult = [k for k, v in scores.items() if v == 90]\nprint(result)</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p><code>items()</code>로 key와 value를 함께 꺼내 value가 90인 key만 모은다.</p>",
+    "acceptedAnswer": "['kim', 'park']",
+    "acceptedAnswers": [
+      "['kim', 'park']",
+      "['kim','park']",
+      "[\"kim\", \"park\"]",
+      "[\"kim\",\"park\"]"
+    ]
+  },
+  {
+    "id": 131,
+    "chapter": "제14장 오류 찾기와 코드 수정",
+    "questionHtml": "<p>다음 Python 코드에서 오류가 발생하는 줄 번호를 쓰시오.</p><pre><code class=\"language-python\">1 name = &quot;Kim&quot;\n2 print(age)\n3 print(name)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>정의되지 않은 변수 <code>age</code>를 사용한 2번 줄에서 오류가 발생한다.</p>",
+    "acceptedAnswer": "2"
+  },
+  {
+    "id": 132,
+    "chapter": "제14장 오류 찾기와 코드 수정",
+    "questionHtml": "<p>다음 코드에서 발생하는 오류 이름으로 가장 알맞은 것을 쓰시오.</p><pre><code class=\"language-python\">a = &quot;10&quot;\nb = 5\nprint(a + b)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>문자열과 정수를 직접 더할 수 없으므로 <code>TypeError</code>가 발생한다.</p>",
+    "acceptedAnswer": "TypeError"
+  },
+  {
+    "id": 133,
+    "chapter": "제14장 오류 찾기와 코드 수정",
+    "questionHtml": "<p>다음 Python 코드에서 오류가 발생하는 줄 번호를 쓰시오.</p><pre><code class=\"language-python\">1 data = [1, 2, 3]\n2 print(data[3])\n3 print(data[0])</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>리스트 [1, 2, 3]의 마지막 인덱스는 2이므로 3번 인덱스 접근은 오류이다.</p>",
+    "acceptedAnswer": "2"
+  },
+  {
+    "id": 134,
+    "chapter": "제14장 오류 찾기와 코드 수정",
+    "questionHtml": "<p>다음 코드에서 발생하는 오류 이름으로 가장 알맞은 것을 쓰시오.</p><pre><code class=\"language-python\">d = {&quot;A&quot;: 1}\nprint(d[&quot;B&quot;])</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>존재하지 않는 key로 접근하면 <code>KeyError</code>가 발생한다.</p>",
+    "acceptedAnswer": "KeyError"
+  },
+  {
+    "id": 135,
+    "chapter": "제14장 오류 찾기와 코드 수정",
+    "questionHtml": "<p>다음 코드에서 발생하는 오류 이름으로 가장 알맞은 것을 쓰시오.</p><pre><code class=\"language-python\">a = (1, 2, 3)\na.append(4)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>튜플에는 <code>append()</code> 메서드가 없으므로 <code>AttributeError</code>가 발생한다.</p>",
+    "acceptedAnswer": "AttributeError"
+  },
+  {
+    "id": 136,
+    "chapter": "제14장 오류 찾기와 코드 수정",
+    "questionHtml": "<p>다음 Python 코드에서 오류가 발생하는 줄 번호를 쓰시오.</p><pre><code class=\"language-python\">1 def test(n):\n2     result = []\n3     for i in range(n):\n4         result.append(i)\n5 return result\n6 print(test(3))</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>return result</code>가 함수 블록 밖에 있어 5번 줄에서 오류가 발생한다.</p>",
+    "acceptedAnswer": "5"
+  },
+  {
+    "id": 137,
+    "chapter": "제14장 오류 찾기와 코드 수정",
+    "questionHtml": "<p>다음 코드에서 발생하는 오류 이름으로 가장 알맞은 것을 쓰시오.</p><pre><code class=\"language-python\">a = 10\nb = 0\nprint(a / b)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>0으로 나눌 수 없으므로 <code>ZeroDivisionError</code>가 발생한다.</p>",
+    "acceptedAnswer": "ZeroDivisionError"
+  },
+  {
+    "id": 138,
+    "chapter": "제14장 오류 찾기와 코드 수정",
+    "questionHtml": "<p>다음 코드가 정상 실행되도록 빈칸에 들어갈 알맞은 자료형 변환 함수를 쓰시오.</p><pre><code class=\"language-python\">a = &quot;10&quot;\nb = 5\nprint((    )(a) + b)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>문자열 10을 정수로 변환해야 하므로 <code>int()</code>를 사용한다.</p>",
+    "acceptedAnswer": "int"
+  },
+  {
+    "id": 139,
+    "chapter": "제14장 오류 찾기와 코드 수정",
+    "questionHtml": "<p>다음 코드에서 발생하는 오류 이름으로 가장 알맞은 것을 쓰시오.</p><pre><code class=\"language-python\">if True\n    print(&quot;OK&quot;)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>조건문 끝에 콜론이 없어 문법 오류가 발생한다.</p>",
+    "acceptedAnswer": "SyntaxError"
+  },
+  {
+    "id": 140,
+    "chapter": "제14장 오류 찾기와 코드 수정",
+    "questionHtml": "<p>다음 코드가 마지막 값을 출력하도록 빈칸에 들어갈 인덱스를 쓰시오.</p><pre><code class=\"language-python\">a = [1, 2, 3]\nprint(a[(    )])</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>마지막 값을 출력하려면 <code>-1</code> 인덱스를 사용한다.</p>",
+    "acceptedAnswer": "-1"
+  },
+  {
+    "id": 141,
+    "chapter": "제15장 실전 코드 실행 결과",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">def make_chars(a, b):\n    data = [ord(a), ord(b)]\n    data.sort()\n    result = []\n    for i in range(data[0], data[1] + 1):\n        result.append(chr(i))\n    return result\n\nfor ch in make_chars(&quot;c&quot;, &quot;f&quot;):\n    print(ch, end=&quot;&quot;)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>ord()</code>와 <code>chr()</code>를 이용해 c부터 f까지 출력한다.</p>",
+    "acceptedAnswer": "cdef"
+  },
+  {
+    "id": 142,
+    "chapter": "제15장 실전 코드 실행 결과",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">def test(param):\n    if isinstance(param, list):\n        print(param[-1])\n        print(param[::-1])\n    else:\n        print(&quot;리스트가 아닙니다&quot;)\n\ntest([1, 2, 3])</code></pre>\n",
+    "type": "text",
+    "explanationHtml": "<p>리스트이면 마지막 값과 역순 리스트를 출력한다.</p>",
+    "acceptedAnswer": "3\n[3, 2, 1]",
+    "acceptedAnswers": [
+      "3\n[3, 2, 1]",
+      "3\n[3,2,1]"
+    ]
+  },
+  {
+    "id": 143,
+    "chapter": "제15장 실전 코드 실행 결과",
+    "questionHtml": "<p>다음 Python 프로그램에서 오류가 발생하는 줄 번호를 쓰시오.</p><pre><code class=\"language-python\">1 def fibonacci(n):\n2     seq = []\n3     a, b = 1, 1\n4     for _ in range(n):\n5         seq.append(a)\n6         a, b = b, a + b\n7 return seq\n8 print(fibonacci(6)[-1])</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p><code>return seq</code>가 함수 밖에 있으므로 7번 줄에서 오류가 발생한다.</p>",
+    "acceptedAnswer": "7"
+  },
+  {
+    "id": 144,
+    "chapter": "제15장 실전 코드 실행 결과",
+    "questionHtml": "<p>앞의 피보나치 코드에서 <code>return seq</code>의 들여쓰기를 고쳐 실행했을 때 출력 결과를 쓰시오.</p><pre><code class=\"language-python\">def fibonacci(n):\n    seq = []\n    a, b = 1, 1\n    for _ in range(n):\n        seq.append(a)\n        a, b = b, a + b\n    return seq\n\nprint(fibonacci(6)[-1])</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>수열은 [1, 1, 2, 3, 5, 8]이고 마지막 값은 8이다.</p>",
+    "acceptedAnswer": "8"
+  },
+  {
+    "id": 145,
+    "chapter": "제15장 실전 코드 실행 결과",
+    "questionHtml": "<p>다음 코드의 빈칸에 들어갈 알맞은 메서드명을 쓰시오.</p><pre><code class=\"language-python\">def find_keys(data, x):\n    return [k for k, v in data.(    ) if v == x]\n\nprint(find_keys({&quot;A&quot;: 1, &quot;B&quot;: 2, &quot;C&quot;: 1}, 1))</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>딕셔너리의 key와 value를 함께 반복할 때는 <code>items()</code>를 사용한다.</p>",
+    "acceptedAnswer": "items"
+  },
+  {
+    "id": 146,
+    "chapter": "제15장 실전 코드 실행 결과",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">class Node:\n    def __init__(self, key):\n        self.left = None\n        self.right = None\n        self.key = key\n\ndef visit(root):\n    if root:\n        visit(root.left)\n        print(root.key, end=&quot;/&quot;)\n        visit(root.right)\n\nroot = Node(1)\nroot.left = Node(5)\nroot.right = Node(3)\nroot.left.left = Node(2)\nroot.left.right = Node(7)\nvisit(root)</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>왼쪽-현재-오른쪽 순서로 방문하므로 2, 5, 7, 1, 3 순서로 출력된다.</p>",
+    "acceptedAnswer": "2/5/7/1/3/"
+  },
+  {
+    "id": 147,
+    "chapter": "제15장 실전 코드 실행 결과",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">def count_even(data):\n    count = 0\n    for x in data:\n        if x % 2 == 0:\n            count += 1\n    return count\n\nprint(count_even([1, 2, 4, 5, 6]))</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>짝수는 2, 4, 6으로 총 3개이다.</p>",
+    "acceptedAnswer": "3"
+  },
+  {
+    "id": 148,
+    "chapter": "제15장 실전 코드 실행 결과",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">text = &quot;banana&quot;\nd = {}\nfor ch in text:\n    d[ch] = d.get(ch, 0) + 1\nprint(d[&quot;a&quot;])</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>banana에서 문자 a는 3번 등장한다.</p>",
+    "acceptedAnswer": "3"
+  },
+  {
+    "id": 149,
+    "chapter": "제15장 실전 코드 실행 결과",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">class A:\n    def __init__(self):\n        print(&quot;A&quot;, end=&quot;&quot;)\n\nclass B(A):\n    def __init__(self):\n        super().__init__()\n        print(&quot;B&quot;, end=&quot;&quot;)\n\nobj = B()</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>자식 클래스 생성자에서 부모 생성자를 먼저 호출한 뒤 B를 출력한다.</p>",
+    "acceptedAnswer": "AB"
+  },
+  {
+    "id": 150,
+    "chapter": "제15장 실전 코드 실행 결과",
+    "questionHtml": "<p>다음 Python 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-python\">def make(data):\n    return [x for x in data if x[0] == &quot;A&quot;]\n\nprint(make([&quot;A1&quot;, &quot;B1&quot;, &quot;A2&quot;])[-1])</code></pre>\n",
+    "type": "short",
+    "explanationHtml": "<p>A로 시작하는 값은 A1, A2이고 마지막 값은 A2이다.</p>",
+    "acceptedAnswer": "A2"
+  }
+]

@@ -1,0 +1,22 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#020617"/>
+  <circle cx="250" cy="90" r="320" fill="#2563EB" opacity="0.35"/>
+  <circle cx="980" cy="40" r="280" fill="#7C3AED" opacity="0.28"/>
+  <rect x="72" y="72" width="1056" height="486" rx="42" fill="#0F172A" stroke="#334155" stroke-width="2"/>
+  <rect x="102" y="108" width="84" height="84" rx="24" fill="url(#g)"/>
+  <path d="M134 134L118 150L134 166" stroke="white" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M154 134L170 150L154 166" stroke="white" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="210" y="160" fill="#BFDBFE" font-size="28" font-family="Arial, sans-serif" font-weight="700">2026 프로그래밍기능사 실기 대비</text>
+  <text x="102" y="280" fill="white" font-size="68" font-family="Arial, sans-serif" font-weight="900">프로그래밍기능사 실기연구소</text>
+  <text x="102" y="350" fill="#CBD5E1" font-size="34" font-family="Arial, sans-serif" font-weight="700">SQL · Python · Java · Linux 실전 문제은행</text>
+  <text x="102" y="430" fill="#93C5FD" font-size="30" font-family="Arial, sans-serif" font-weight="700">비회원 과목별 50문항 무료 · 베타 회원 전체 620문항 무료</text>
+  <rect x="102" y="475" width="278" height="52" rx="18" fill="#2563EB"/>
+  <text x="130" y="511" fill="white" font-size="24" font-family="Arial, sans-serif" font-weight="800">무료 베타 테스트 중</text>
+  <defs>
+    <linearGradient id="g" x1="102" y1="108" x2="186" y2="192" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2563EB"/>
+      <stop offset="0.55" stop-color="#4F46E5"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+</svg>

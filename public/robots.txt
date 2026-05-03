@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin
+Disallow: /admin/
+Disallow: /account
+Disallow: /auth/
+Disallow: /login
+Disallow: /signup
+Disallow: /my-study
+Disallow: /wrong-notes
+Disallow: /analytics
+
+Sitemap: http://localhost:3000/sitemap.xml

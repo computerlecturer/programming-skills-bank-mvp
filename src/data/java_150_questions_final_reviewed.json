@@ -1,0 +1,1208 @@
+[
+  {
+    "id": 1,
+    "chapter": "제1장 Java 기본 구조와 출력",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        System.out.print(&quot;JAVA&quot;);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>System.out.print()</code>는 괄호 안의 값을 출력한다.</p>",
+    "acceptedAnswer": "JAVA"
+  },
+  {
+    "id": 2,
+    "chapter": "제1장 Java 기본 구조와 출력",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        System.out.print(10 + 5);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>정수끼리의 <code>+</code>는 덧셈으로 계산된다.</p>",
+    "acceptedAnswer": "15"
+  },
+  {
+    "id": 3,
+    "chapter": "제1장 Java 기본 구조와 출력",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        System.out.print(&quot;10&quot; + &quot;5&quot;);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>문자열끼리의 <code>+</code>는 이어 붙이기이다.</p>",
+    "acceptedAnswer": "105"
+  },
+  {
+    "id": 4,
+    "chapter": "제1장 Java 기본 구조와 출력",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        System.out.print(&quot;A&quot;);\n        System.out.print(&quot;B&quot;);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>print()</code>는 출력 후 줄바꿈하지 않는다.</p>",
+    "acceptedAnswer": "AB"
+  },
+  {
+    "id": 5,
+    "chapter": "제1장 Java 기본 구조와 출력",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        System.out.println(&quot;A&quot;);\n        System.out.print(&quot;B&quot;);\n    }\n}</code></pre>",
+    "type": "text",
+    "explanationHtml": "<p><code>println()</code>은 출력 후 줄바꿈한다.</p>",
+    "acceptedAnswer": "A\nB"
+  },
+  {
+    "id": 6,
+    "chapter": "제1장 Java 기본 구조와 출력",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    static int count = 1;\n\n    public static void main(String[] args) {\n        count = count + 2;\n        System.out.print(count);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>count</code>는 <code>static</code> 변수로 처음에 <code>1</code>로 초기화된다. <code>main</code> 메서드에서 <code>count = count + 2</code>가 실행되므로 값은 <code>3</code>이 되고, <code>System.out.print(count)</code>가 그 값을 출력한다.</p>",
+    "acceptedAnswer": "3"
+  },
+  {
+    "id": 7,
+    "chapter": "제1장 Java 기본 구조와 출력",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        System.out.print(&quot;Hello&quot;);\n        System.out.println(&quot;Java&quot;);\n        System.out.print(&quot;2026&quot;);\n    }\n}</code></pre>",
+    "type": "text",
+    "explanationHtml": "<p><code>System.out.print()</code>는 출력 후 줄바꿈하지 않고, <code>System.out.println()</code>은 출력 후 줄바꿈한다. 먼저 <code>Hello</code>가 출력되고 같은 줄에 <code>Java</code>가 이어서 출력된 뒤 줄이 바뀐다. 마지막 <code>2026</code>은 다음 줄에 출력된다.</p>",
+    "acceptedAnswer": "HelloJava\n2026",
+    "gradingPolicy": {
+      "preserveLineBreaks": true,
+      "caseSensitive": true,
+      "ignoreSemicolon": false,
+      "note": "출력 결과 문제이므로 줄바꿈과 대소문자를 그대로 채점한다."
+    }
+  },
+  {
+    "id": 8,
+    "chapter": "제1장 Java 기본 구조와 출력",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        System.out.print(&#x27;A&#x27;);\n        System.out.print(1);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>문자 <code>A</code>와 숫자 <code>1</code>이 순서대로 출력된다.</p>",
+    "acceptedAnswer": "A1"
+  },
+  {
+    "id": 9,
+    "chapter": "제1장 Java 기본 구조와 출력",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        System.out.print(&quot;A&quot; + 1 + 2);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>문자열이 먼저 나오면 뒤의 숫자도 문자열로 이어 붙는다.</p>",
+    "acceptedAnswer": "A12"
+  },
+  {
+    "id": 10,
+    "chapter": "제1장 Java 기본 구조와 출력",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        System.out.print(1 + 2 + &quot;A&quot;);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>앞의 <code>1 + 2</code>가 먼저 계산된 뒤 문자열과 연결된다.</p>",
+    "acceptedAnswer": "3A"
+  },
+  {
+    "id": 11,
+    "chapter": "제2장 변수와 자료형",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int a = 7;\n        System.out.print(a);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>int</code> 변수 <code>a</code>에 저장된 값 7이 출력된다.</p>",
+    "acceptedAnswer": "7"
+  },
+  {
+    "id": 12,
+    "chapter": "제2장 변수와 자료형",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int a = 3;\n        int b = 4;\n        System.out.print(a + b);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>두 정수 변수의 합은 7이다.</p>",
+    "acceptedAnswer": "7"
+  },
+  {
+    "id": 13,
+    "chapter": "제2장 변수와 자료형",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        double x = 2.5;\n        System.out.print(x);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>double</code>은 실수 값을 저장할 수 있다.</p>",
+    "acceptedAnswer": "2.5"
+  },
+  {
+    "id": 14,
+    "chapter": "제2장 변수와 자료형",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        char c = &#x27;K&#x27;;\n        System.out.print(c);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>char</code>는 한 문자를 저장한다.</p>",
+    "acceptedAnswer": "K"
+  },
+  {
+    "id": 15,
+    "chapter": "제2장 변수와 자료형",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        boolean flag = true;\n        System.out.print(flag);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>boolean</code>은 <code>true</code> 또는 <code>false</code> 값을 가진다.</p>",
+    "acceptedAnswer": "true"
+  },
+  {
+    "id": 16,
+    "chapter": "제2장 변수와 자료형",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int a = 10;\n        a = 20;\n        System.out.print(a);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>변수에 새 값을 대입하면 기존 값은 바뀐다.</p>",
+    "acceptedAnswer": "20"
+  },
+  {
+    "id": 17,
+    "chapter": "제2장 변수와 자료형",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int a = (int) 3.7;\n        System.out.print(a);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>실수를 정수로 강제 형변환하면 소수 부분이 버려진다.</p>",
+    "acceptedAnswer": "3"
+  },
+  {
+    "id": 18,
+    "chapter": "제2장 변수와 자료형",
+    "questionHtml": "<p>다음 빈칸에 들어갈 자료형을 쓰시오.</p><pre><code class=\"language-java\">(      ) count = 10;</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>정수 값을 저장할 때 대표적으로 <code>int</code>를 사용한다.</p>",
+    "acceptedAnswer": "int"
+  },
+  {
+    "id": 19,
+    "chapter": "제2장 변수와 자료형",
+    "questionHtml": "<p>다음 빈칸에 들어갈 자료형을 쓰시오.</p><pre><code class=\"language-java\">(      ) name = &quot;JAVA&quot;;</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>문자열은 <code>String</code> 자료형에 저장한다.</p>",
+    "acceptedAnswer": "String"
+  },
+  {
+    "id": 20,
+    "chapter": "제2장 변수와 자료형",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        String s = &quot;A&quot;;\n        int n = 3;\n        System.out.print(s + n);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>문자열과 정수를 <code>+</code>로 연결하면 문자열이 된다.</p>",
+    "acceptedAnswer": "A3"
+  },
+  {
+    "id": 21,
+    "chapter": "제3장 연산자와 증감 연산",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        System.out.print(7 / 2);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>정수 나눗셈에서는 몫만 남는다.</p>",
+    "acceptedAnswer": "3"
+  },
+  {
+    "id": 22,
+    "chapter": "제3장 연산자와 증감 연산",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        System.out.print(7 % 2);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>%</code>는 나머지를 구한다.</p>",
+    "acceptedAnswer": "1"
+  },
+  {
+    "id": 23,
+    "chapter": "제3장 연산자와 증감 연산",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int a = 5;\n        a += 3;\n        System.out.print(a);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>a += 3</code>은 <code>a = a + 3</code>과 같다.</p>",
+    "acceptedAnswer": "8"
+  },
+  {
+    "id": 24,
+    "chapter": "제3장 연산자와 증감 연산",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int a = 5;\n        a++;\n        System.out.print(a);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>a++</code>는 변수 값을 1 증가시킨다.</p>",
+    "acceptedAnswer": "6"
+  },
+  {
+    "id": 25,
+    "chapter": "제3장 연산자와 증감 연산",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int a = 5;\n        ++a;\n        System.out.print(a);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>++a</code>도 변수 값을 1 증가시킨다.</p>",
+    "acceptedAnswer": "6"
+  },
+  {
+    "id": 26,
+    "chapter": "제3장 연산자와 증감 연산",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int a = 5;\n        System.out.print(a++);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>후위 증가 연산자는 현재 값을 먼저 사용한 뒤 증가시킨다.</p>",
+    "acceptedAnswer": "5"
+  },
+  {
+    "id": 27,
+    "chapter": "제3장 연산자와 증감 연산",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int a = 5;\n        System.out.print(++a);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>전위 증가 연산자는 먼저 증가한 뒤 값을 사용한다.</p>",
+    "acceptedAnswer": "6"
+  },
+  {
+    "id": 28,
+    "chapter": "제3장 연산자와 증감 연산",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int a = 4;\n        int b = 2;\n        System.out.print(a &gt; b);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>4 &gt; 2</code>는 참이다.</p>",
+    "acceptedAnswer": "true"
+  },
+  {
+    "id": 29,
+    "chapter": "제3장 연산자와 증감 연산",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int a = 3;\n        System.out.print(a &gt; 1 &amp;&amp; a &lt; 5);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>&&</code>는 두 조건이 모두 참일 때 참이다.</p>",
+    "acceptedAnswer": "true"
+  },
+  {
+    "id": 30,
+    "chapter": "제3장 연산자와 증감 연산",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int a = 3;\n        System.out.print(a &lt; 1 || a == 3);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>||</code>는 둘 중 하나만 참이어도 참이다.</p>",
+    "acceptedAnswer": "true"
+  },
+  {
+    "id": 31,
+    "chapter": "제4장 조건문과 삼항 연산자",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int score = 85;\n        if (score &gt;= 80) System.out.print(&quot;PASS&quot;);\n        else System.out.print(&quot;FAIL&quot;);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>85는 80 이상이므로 <code>PASS</code>가 출력된다.</p>",
+    "acceptedAnswer": "PASS"
+  },
+  {
+    "id": 32,
+    "chapter": "제4장 조건문과 삼항 연산자",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int n = 5;\n        if (n % 2 == 0) System.out.print(&quot;EVEN&quot;);\n        else System.out.print(&quot;ODD&quot;);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>5를 2로 나누면 나머지가 1이므로 홀수이다.</p>",
+    "acceptedAnswer": "ODD"
+  },
+  {
+    "id": 33,
+    "chapter": "제4장 조건문과 삼항 연산자",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int a = 10;\n        String result = (a &gt;= 10) ? &quot;A&quot; : &quot;B&quot;;\n        System.out.print(result);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>삼항 연산자에서 조건이 참이면 앞의 값이 선택된다.</p>",
+    "acceptedAnswer": "A"
+  },
+  {
+    "id": 34,
+    "chapter": "제4장 조건문과 삼항 연산자",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int a = 3;\n        String result = (a &gt; 5) ? &quot;UP&quot; : &quot;DOWN&quot;;\n        System.out.print(result);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>a &gt; 5</code>가 거짓이므로 뒤의 값이 선택된다.</p>",
+    "acceptedAnswer": "DOWN"
+  },
+  {
+    "id": 35,
+    "chapter": "제4장 조건문과 삼항 연산자",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int x = 2;\n        if (x == 1) System.out.print(&quot;A&quot;);\n        else if (x == 2) System.out.print(&quot;B&quot;);\n        else System.out.print(&quot;C&quot;);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>x</code>가 2이므로 두 번째 조건이 실행된다.</p>",
+    "acceptedAnswer": "B"
+  },
+  {
+    "id": 36,
+    "chapter": "제4장 조건문과 삼항 연산자",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int n = 0;\n        if (n &gt; 0) System.out.print(&quot;P&quot;);\n        else if (n &lt; 0) System.out.print(&quot;N&quot;);\n        else System.out.print(&quot;Z&quot;);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>0은 양수도 음수도 아니므로 <code>Z</code>가 출력된다.</p>",
+    "acceptedAnswer": "Z"
+  },
+  {
+    "id": 37,
+    "chapter": "제4장 조건문과 삼항 연산자",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int day = 2;\n        switch(day) {\n            case 1:\n                System.out.print(&quot;MON&quot;);\n                break;\n            case 2:\n                System.out.print(&quot;TUE&quot;);\n                break;\n            default:\n                System.out.print(&quot;ETC&quot;);\n        }\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>case 2</code>가 실행되고 <code>break</code>로 종료된다.</p>",
+    "acceptedAnswer": "TUE"
+  },
+  {
+    "id": 38,
+    "chapter": "제4장 조건문과 삼항 연산자",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int day = 3;\n        switch(day) {\n            case 1:\n                System.out.print(&quot;A&quot;);\n                break;\n            case 2:\n                System.out.print(&quot;B&quot;);\n                break;\n            default:\n                System.out.print(&quot;C&quot;);\n        }\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>일치하는 case가 없으므로 <code>default</code>가 실행된다.</p>",
+    "acceptedAnswer": "C"
+  },
+  {
+    "id": 39,
+    "chapter": "제4장 조건문과 삼항 연산자",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int a = 5;\n        if (a &gt; 3) {\n            if (a &lt; 10) System.out.print(&quot;X&quot;);\n        }\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>중첩 조건문 두 조건이 모두 참이다.</p>",
+    "acceptedAnswer": "X"
+  },
+  {
+    "id": 40,
+    "chapter": "제4장 조건문과 삼항 연산자",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int a = 8;\n        if (a % 2 == 0 &amp;&amp; a &gt; 5) System.out.print(&quot;OK&quot;);\n        else System.out.print(&quot;NO&quot;);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>8은 짝수이고 5보다 크므로 두 조건을 모두 만족한다.</p>",
+    "acceptedAnswer": "OK"
+  },
+  {
+    "id": 41,
+    "chapter": "제5장 반복문",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        for (int i = 1; i &lt;= 3; i++) System.out.print(i);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>i</code>가 1부터 3까지 증가하며 출력된다.</p>",
+    "acceptedAnswer": "123"
+  },
+  {
+    "id": 42,
+    "chapter": "제5장 반복문",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        for (int i = 0; i &lt; 3; i++) System.out.print(&quot;A&quot;);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>반복문이 3번 실행된다.</p>",
+    "acceptedAnswer": "AAA"
+  },
+  {
+    "id": 43,
+    "chapter": "제5장 반복문",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int sum = 0;\n        for (int i = 1; i &lt;= 4; i++) sum += i;\n        System.out.print(sum);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>1+2+3+4의 합은 10이다.</p>",
+    "acceptedAnswer": "10"
+  },
+  {
+    "id": 44,
+    "chapter": "제5장 반복문",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int i = 1;\n        while (i &lt;= 3) {\n            System.out.print(i);\n            i++;\n        }\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>while</code> 조건이 참인 동안 반복된다.</p>",
+    "acceptedAnswer": "123"
+  },
+  {
+    "id": 45,
+    "chapter": "제5장 반복문",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int i = 3;\n        while (i &gt; 0) {\n            System.out.print(i);\n            i--;\n        }\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>i</code>가 3에서 1까지 감소하며 출력된다.</p>",
+    "acceptedAnswer": "321"
+  },
+  {
+    "id": 46,
+    "chapter": "제5장 반복문",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int i = 0;\n        do {\n            System.out.print(i);\n            i++;\n        } while (i &lt; 3);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>do-while</code>은 본문을 먼저 실행한 뒤 조건을 검사한다.</p>",
+    "acceptedAnswer": "012"
+  },
+  {
+    "id": 47,
+    "chapter": "제5장 반복문",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        for (int i = 1; i &lt;= 5; i++) {\n            if (i == 3) break;\n            System.out.print(i);\n        }\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>i</code>가 3이 되면 <code>break</code>로 반복문을 종료한다.</p>",
+    "acceptedAnswer": "12"
+  },
+  {
+    "id": 48,
+    "chapter": "제5장 반복문",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        for (int i = 1; i &lt;= 4; i++) {\n            if (i == 2) continue;\n            System.out.print(i);\n        }\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>continue</code>는 현재 반복을 건너뛰고 다음 반복으로 넘어간다.</p>",
+    "acceptedAnswer": "134"
+  },
+  {
+    "id": 49,
+    "chapter": "제5장 반복문",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        for (int i = 1; i &lt;= 2; i++) {\n            for (int j = 1; j &lt;= 2; j++) {\n                System.out.print(i + &quot;&quot; + j);\n            }\n        }\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>중첩 반복문에서 바깥 반복 2번, 안쪽 반복 2번이 실행된다.</p>",
+    "acceptedAnswer": "11122122"
+  },
+  {
+    "id": 50,
+    "chapter": "제5장 반복문",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int count = 0;\n        for (int i = 1; i &lt;= 5; i++) {\n            if (i % 2 == 0) count++;\n        }\n        System.out.print(count);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>1부터 5까지의 짝수는 2와 4로 총 2개이다.</p>",
+    "acceptedAnswer": "2"
+  },
+  {
+    "id": 51,
+    "chapter": "제6장 배열",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int[] a = {1, 2, 3};\n        System.out.print(a[0]);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>배열의 인덱스는 0부터 시작한다.</p>",
+    "acceptedAnswer": "1"
+  },
+  {
+    "id": 52,
+    "chapter": "제6장 배열",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int[] a = {1, 2, 3};\n        System.out.print(a[2]);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>a[2]</code>는 세 번째 요소이다.</p>",
+    "acceptedAnswer": "3"
+  },
+  {
+    "id": 53,
+    "chapter": "제6장 배열",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int[] a = {2, 4, 6};\n        System.out.print(a.length);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>배열의 길이는 <code>length</code>로 구한다.</p>",
+    "acceptedAnswer": "3"
+  },
+  {
+    "id": 54,
+    "chapter": "제6장 배열",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int[] a = {2, 4, 6};\n        int sum = 0;\n        for (int i = 0; i &lt; a.length; i++) sum += a[i];\n        System.out.print(sum);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>배열 요소 2, 4, 6의 합은 12이다.</p>",
+    "acceptedAnswer": "12"
+  },
+  {
+    "id": 55,
+    "chapter": "제6장 배열",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        String[] s = {&quot;A&quot;, &quot;B&quot;, &quot;C&quot;};\n        System.out.print(s[1]);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>s[1]</code>은 두 번째 문자열이다.</p>",
+    "acceptedAnswer": "B"
+  },
+  {
+    "id": 56,
+    "chapter": "제6장 배열",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int[] a = new int[3];\n        a[0] = 5;\n        a[1] = 7;\n        System.out.print(a[0] + a[1] + a[2]);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>정수 배열의 초기값은 0이다.</p>",
+    "acceptedAnswer": "12"
+  },
+  {
+    "id": 57,
+    "chapter": "제6장 배열",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int[] a = {1, 2, 3};\n        for (int x : a) System.out.print(x);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>향상된 for문은 배열의 요소를 순서대로 꺼낸다.</p>",
+    "acceptedAnswer": "123"
+  },
+  {
+    "id": 58,
+    "chapter": "제6장 배열",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int[][] a = {{1, 2}, {3, 4}};\n        System.out.print(a[1][0]);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>a[1][0]</code>은 두 번째 행 첫 번째 열의 값이다.</p>",
+    "acceptedAnswer": "3"
+  },
+  {
+    "id": 59,
+    "chapter": "제6장 배열",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        int[][] a = {{1, 2}, {3, 4}};\n        System.out.print(a[0][1] + a[1][1]);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>a[0][1]</code>은 2, <code>a[1][1]</code>은 4이다.</p>",
+    "acceptedAnswer": "6"
+  },
+  {
+    "id": 60,
+    "chapter": "제6장 배열",
+    "questionHtml": "<p>다음 코드에서 배열의 길이를 구하는 빈칸에 들어갈 알맞은 속성을 쓰시오.</p><pre><code class=\"language-java\">int[] data = {10, 20, 30};\nSystem.out.print(data.(      ));</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>배열의 길이는 메서드가 아니라 속성 <code>length</code>로 구한다.</p>",
+    "acceptedAnswer": "length"
+  },
+  {
+    "id": 61,
+    "chapter": "제7장 문자열 처리",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        String s = &quot;JAVA&quot;;\n        System.out.print(s.length());\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>문자열의 길이는 <code>length()</code> 메서드로 구한다.</p>",
+    "acceptedAnswer": "4"
+  },
+  {
+    "id": 62,
+    "chapter": "제7장 문자열 처리",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        String s = &quot;JAVA&quot;;\n        System.out.print(s.charAt(1));\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>charAt(1)</code>은 두 번째 문자를 반환한다.</p>",
+    "acceptedAnswer": "A"
+  },
+  {
+    "id": 63,
+    "chapter": "제7장 문자열 처리",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        String s = &quot;HELLO&quot;;\n        System.out.print(s.substring(1, 4));\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>substring(1, 4)</code>는 인덱스 1부터 3까지의 문자열이다.</p>",
+    "acceptedAnswer": "ELL"
+  },
+  {
+    "id": 64,
+    "chapter": "제7장 문자열 처리",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        String a = &quot;java&quot;;\n        System.out.print(a.toUpperCase());\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>toUpperCase()</code>는 문자열을 대문자로 바꾼다.</p>",
+    "acceptedAnswer": "JAVA"
+  },
+  {
+    "id": 65,
+    "chapter": "제7장 문자열 처리",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        String a = &quot;JAVA&quot;;\n        System.out.print(a.toLowerCase());\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>toLowerCase()</code>는 문자열을 소문자로 바꾼다.</p>",
+    "acceptedAnswer": "java"
+  },
+  {
+    "id": 66,
+    "chapter": "제7장 문자열 처리",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        String a = &quot;hi&quot;;\n        String b = &quot;hi&quot;;\n        System.out.print(a == b);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>문자열 리터럴은 같은 객체를 참조할 수 있으므로 이 경우 <code>true</code>이다.</p>",
+    "acceptedAnswer": "true"
+  },
+  {
+    "id": 67,
+    "chapter": "제7장 문자열 처리",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        String a = new String(&quot;hi&quot;);\n        String b = new String(&quot;hi&quot;);\n        System.out.print(a == b);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>new String()</code>으로 만든 객체는 서로 다른 객체이므로 <code>==</code> 비교는 <code>false</code>이다.</p>",
+    "acceptedAnswer": "false"
+  },
+  {
+    "id": 68,
+    "chapter": "제7장 문자열 처리",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        String a = new String(&quot;hi&quot;);\n        String b = new String(&quot;hi&quot;);\n        System.out.print(a.equals(b));\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>equals()</code>는 문자열 내용을 비교한다.</p>",
+    "acceptedAnswer": "true"
+  },
+  {
+    "id": 69,
+    "chapter": "제7장 문자열 처리",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        String s = &quot;A,B,C&quot;;\n        String[] arr = s.split(&quot;,&quot;);\n        System.out.print(arr[1]);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>split(\",\")</code>은 콤마를 기준으로 문자열을 나눈다.</p>",
+    "acceptedAnswer": "B"
+  },
+  {
+    "id": 70,
+    "chapter": "제7장 문자열 처리",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        String s = &quot;  A  &quot;;\n        System.out.print(s.trim());\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>trim()</code>은 문자열 양끝의 공백을 제거한다.</p>",
+    "acceptedAnswer": "A"
+  },
+  {
+    "id": 71,
+    "chapter": "제8장 메서드와 반환값",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    static int add(int a, int b) {\n        return a + b;\n    }\n    public static void main(String[] args) {\n        System.out.print(add(3, 4));\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>메서드 <code>add</code>는 두 매개변수의 합을 반환한다.</p>",
+    "acceptedAnswer": "7"
+  },
+  {
+    "id": 72,
+    "chapter": "제8장 메서드와 반환값",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    static int square(int x) {\n        return x * x;\n    }\n    public static void main(String[] args) {\n        System.out.print(square(5));\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>5의 제곱은 25이다.</p>",
+    "acceptedAnswer": "25"
+  },
+  {
+    "id": 73,
+    "chapter": "제8장 메서드와 반환값",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    static String test(String s) {\n        return s + &quot;!&quot;;\n    }\n    public static void main(String[] args) {\n        System.out.print(test(&quot;JAVA&quot;));\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>전달된 문자열 뒤에 <code>!</code>를 붙여 반환한다.</p>",
+    "acceptedAnswer": "JAVA!"
+  },
+  {
+    "id": 74,
+    "chapter": "제8장 메서드와 반환값",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    static void hello() {\n        System.out.print(&quot;HI&quot;);\n    }\n    public static void main(String[] args) {\n        hello();\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>void</code> 메서드는 값을 반환하지 않지만 내부에서 출력할 수 있다.</p>",
+    "acceptedAnswer": "HI"
+  },
+  {
+    "id": 75,
+    "chapter": "제8장 메서드와 반환값",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    static int test(int x) {\n        x = x + 2;\n        return x;\n    }\n    public static void main(String[] args) {\n        int a = 3;\n        System.out.print(test(a));\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>매개변수 <code>x</code>에 2를 더한 값을 반환한다.</p>",
+    "acceptedAnswer": "5"
+  },
+  {
+    "id": 76,
+    "chapter": "제8장 메서드와 반환값",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    static int max(int a, int b) {\n        if (a &gt; b) return a;\n        return b;\n    }\n    public static void main(String[] args) {\n        System.out.print(max(7, 4));\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>7이 4보다 크므로 7을 반환한다.</p>",
+    "acceptedAnswer": "7"
+  },
+  {
+    "id": 77,
+    "chapter": "제8장 메서드와 반환값",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    static int sum(int n) {\n        int s = 0;\n        for (int i = 1; i &lt;= n; i++) s += i;\n        return s;\n    }\n    public static void main(String[] args) {\n        System.out.print(sum(4));\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>1부터 4까지의 합은 10이다.</p>",
+    "acceptedAnswer": "10"
+  },
+  {
+    "id": 78,
+    "chapter": "제8장 메서드와 반환값",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    static int test(int x) {\n        return x * 2;\n    }\n    static int test(int x, int y) {\n        return x + y;\n    }\n    public static void main(String[] args) {\n        System.out.print(test(3, 4));\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>매개변수 2개를 받는 메서드가 호출된다.</p>",
+    "acceptedAnswer": "7"
+  },
+  {
+    "id": 79,
+    "chapter": "제8장 메서드와 반환값",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    static int f(int x) {\n        if (x &lt;= 1) return 1;\n        return x * f(x - 1);\n    }\n    public static void main(String[] args) {\n        System.out.print(f(4));\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>4! = 4 × 3 × 2 × 1 = 24이다.</p>",
+    "acceptedAnswer": "24"
+  },
+  {
+    "id": 80,
+    "chapter": "제8장 메서드와 반환값",
+    "questionHtml": "<p>다음 메서드에서 반환값이 없음을 나타내는 빈칸의 키워드를 쓰시오.</p><pre><code class=\"language-java\">static (      ) printName() {\n    System.out.print(&quot;Kim&quot;);\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>반환값이 없는 메서드는 <code>void</code>를 사용한다.</p>",
+    "acceptedAnswer": "void"
+  },
+  {
+    "id": 81,
+    "chapter": "제9장 클래스와 객체",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Person {\n    String name = &quot;Kim&quot;;\n}\nclass Main {\n    public static void main(String[] args) {\n        Person p = new Person();\n        System.out.print(p.name);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>객체 <code>p</code>의 필드 <code>name</code> 값을 출력한다.</p>",
+    "acceptedAnswer": "Kim"
+  },
+  {
+    "id": 82,
+    "chapter": "제9장 클래스와 객체",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Box {\n    int size = 10;\n}\nclass Main {\n    public static void main(String[] args) {\n        Box b = new Box();\n        b.size = 20;\n        System.out.print(b.size);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>객체 필드 값을 20으로 변경한 뒤 출력한다.</p>",
+    "acceptedAnswer": "20"
+  },
+  {
+    "id": 83,
+    "chapter": "제9장 클래스와 객체",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Calc {\n    int add(int a, int b) { return a + b; }\n}\nclass Main {\n    public static void main(String[] args) {\n        Calc c = new Calc();\n        System.out.print(c.add(2, 5));\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>객체 메서드를 호출하여 2와 5의 합을 출력한다.</p>",
+    "acceptedAnswer": "7"
+  },
+  {
+    "id": 84,
+    "chapter": "제9장 클래스와 객체",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Counter {\n    int value = 0;\n    void up() { value++; }\n}\nclass Main {\n    public static void main(String[] args) {\n        Counter c = new Counter();\n        c.up();\n        c.up();\n        System.out.print(c.value);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>up()</code>이 두 번 호출되어 값이 2가 된다.</p>",
+    "acceptedAnswer": "2"
+  },
+  {
+    "id": 85,
+    "chapter": "제9장 클래스와 객체",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Data {\n    int x;\n}\nclass Main {\n    public static void main(String[] args) {\n        Data d = new Data();\n        System.out.print(d.x);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>객체의 정수 필드는 명시적으로 초기화하지 않으면 0이다.</p>",
+    "acceptedAnswer": "0"
+  },
+  {
+    "id": 86,
+    "chapter": "제9장 클래스와 객체",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Data {\n    String s;\n}\nclass Main {\n    public static void main(String[] args) {\n        Data d = new Data();\n        System.out.print(d.s);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>객체의 참조형 필드는 기본값이 <code>null</code>이다.</p>",
+    "acceptedAnswer": "null"
+  },
+  {
+    "id": 87,
+    "chapter": "제9장 클래스와 객체",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class A {\n    int x = 1;\n}\nclass Main {\n    public static void main(String[] args) {\n        A a1 = new A();\n        A a2 = new A();\n        a1.x = 5;\n        System.out.print(a2.x);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>서로 다른 객체의 필드는 독립적으로 저장된다.</p>",
+    "acceptedAnswer": "1"
+  },
+  {
+    "id": 88,
+    "chapter": "제9장 클래스와 객체",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class A {\n    static int x = 1;\n}\nclass Main {\n    public static void main(String[] args) {\n        A a1 = new A();\n        A a2 = new A();\n        a1.x = 5;\n        System.out.print(a2.x);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>static</code> 필드는 클래스가 공유한다.</p>",
+    "acceptedAnswer": "5"
+  },
+  {
+    "id": 89,
+    "chapter": "제9장 클래스와 객체",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class A {\n    static void show() { System.out.print(&quot;S&quot;); }\n}\nclass Main {\n    public static void main(String[] args) {\n        A.show();\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>static</code> 메서드는 클래스 이름으로 호출할 수 있다.</p>",
+    "acceptedAnswer": "S"
+  },
+  {
+    "id": 90,
+    "chapter": "제9장 클래스와 객체",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Item {\n    int price = 100;\n    int getPrice() { return price; }\n}\nclass Main {\n    public static void main(String[] args) {\n        Item item = new Item();\n        System.out.print(item.getPrice());\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>메서드가 객체 필드 값을 반환한다.</p>",
+    "acceptedAnswer": "100"
+  },
+  {
+    "id": 91,
+    "chapter": "제10장 생성자",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class A {\n    A() { System.out.print(&quot;A&quot;); }\n}\nclass Main {\n    public static void main(String[] args) {\n        A a = new A();\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>객체가 생성될 때 생성자가 자동으로 호출된다.</p>",
+    "acceptedAnswer": "A"
+  },
+  {
+    "id": 92,
+    "chapter": "제10장 생성자",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class A {\n    A() { System.out.print(&quot;A&quot;); }\n    A(int x) { System.out.print(x); }\n}\nclass Main {\n    public static void main(String[] args) {\n        A a = new A(5);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>정수 매개변수를 받는 생성자가 호출된다.</p>",
+    "acceptedAnswer": "5"
+  },
+  {
+    "id": 93,
+    "chapter": "제10장 생성자",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class A {\n    A() {\n        this(3);\n        System.out.print(&quot;A&quot;);\n    }\n    A(int x) { System.out.print(x); }\n}\nclass Main {\n    public static void main(String[] args) {\n        A a = new A();\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>this(3)</code>으로 다른 생성자를 먼저 호출한 뒤 <code>A</code>를 출력한다.</p>",
+    "acceptedAnswer": "3A"
+  },
+  {
+    "id": 94,
+    "chapter": "제10장 생성자",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class A {\n    A() { System.out.print(&quot;X&quot;); }\n    A(char c) {\n        this();\n        System.out.print(c);\n    }\n}\nclass Main {\n    public static void main(String[] args) {\n        A a = new A(&#x27;Y&#x27;);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>매개변수 생성자에서 <code>this()</code>로 기본 생성자를 먼저 호출한다.</p>",
+    "acceptedAnswer": "XY"
+  },
+  {
+    "id": 95,
+    "chapter": "제10장 생성자",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class A {\n    int x;\n    A(int x) { this.x = x; }\n}\nclass Main {\n    public static void main(String[] args) {\n        A a = new A(7);\n        System.out.print(a.x);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>this.x</code>는 객체의 필드를 의미한다.</p>",
+    "acceptedAnswer": "7"
+  },
+  {
+    "id": 96,
+    "chapter": "제10장 생성자",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class A {\n    int x = 1;\n    A() { x = 9; }\n}\nclass Main {\n    public static void main(String[] args) {\n        A a = new A();\n        System.out.print(a.x);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>생성자에서 필드 값이 9로 변경된다.</p>",
+    "acceptedAnswer": "9"
+  },
+  {
+    "id": 97,
+    "chapter": "제10장 생성자",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class A {\n    A() { System.out.print(&quot;A&quot;); }\n}\nclass B extends A {\n    B() { System.out.print(&quot;B&quot;); }\n}\nclass Main {\n    public static void main(String[] args) {\n        B b = new B();\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>자식 객체를 만들면 부모 생성자가 먼저 호출된다.</p>",
+    "acceptedAnswer": "AB"
+  },
+  {
+    "id": 98,
+    "chapter": "제10장 생성자",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class A {\n    A() { System.out.print(&quot;A&quot;); }\n}\nclass B extends A {\n    B() {\n        super();\n        System.out.print(&quot;B&quot;);\n    }\n}\nclass Main {\n    public static void main(String[] args) {\n        new B();\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>super()</code>는 부모 생성자를 호출한다.</p>",
+    "acceptedAnswer": "AB"
+  },
+  {
+    "id": 99,
+    "chapter": "제10장 생성자",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class A {\n    A(int x) { System.out.print(x); }\n}\nclass B extends A {\n    B() {\n        super(4);\n        System.out.print(&quot;B&quot;);\n    }\n}\nclass Main {\n    public static void main(String[] args) {\n        new B();\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>자식 생성자에서 <code>super(4)</code>로 부모 생성자를 먼저 호출한다.</p>",
+    "acceptedAnswer": "4B"
+  },
+  {
+    "id": 100,
+    "chapter": "제10장 생성자",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class A {\n    A() { System.out.print(&quot;A&quot;); }\n}\nclass Main {\n    public static void main(String[] args) {\n        new A();\n        new A();\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>객체를 두 번 생성하므로 생성자도 두 번 호출된다.</p>",
+    "acceptedAnswer": "AA"
+  },
+  {
+    "id": 101,
+    "chapter": "제11장 상속과 super",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Parent {\n    void show() { System.out.print(&quot;P&quot;); }\n}\nclass Child extends Parent { }\nclass Main {\n    public static void main(String[] args) {\n        Child c = new Child();\n        c.show();\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>자식 클래스는 부모 클래스의 메서드를 사용할 수 있다.</p>",
+    "acceptedAnswer": "P"
+  },
+  {
+    "id": 102,
+    "chapter": "제11장 상속과 super",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Parent {\n    int x = 10;\n}\nclass Child extends Parent {\n    int y = 20;\n}\nclass Main {\n    public static void main(String[] args) {\n        Child c = new Child();\n        System.out.print(c.x + c.y);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>상속받은 필드와 자식 필드를 함께 사용할 수 있다.</p>",
+    "acceptedAnswer": "30"
+  },
+  {
+    "id": 103,
+    "chapter": "제11장 상속과 super",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Parent {\n    void show() { System.out.print(&quot;P&quot;); }\n}\nclass Child extends Parent {\n    void show() { System.out.print(&quot;C&quot;); }\n}\nclass Main {\n    public static void main(String[] args) {\n        Child c = new Child();\n        c.show();\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>자식 클래스에서 재정의한 메서드가 실행된다.</p>",
+    "acceptedAnswer": "C"
+  },
+  {
+    "id": 104,
+    "chapter": "제11장 상속과 super",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Parent {\n    void show() { System.out.print(&quot;P&quot;); }\n}\nclass Child extends Parent {\n    void show() {\n        super.show();\n        System.out.print(&quot;C&quot;);\n    }\n}\nclass Main {\n    public static void main(String[] args) {\n        new Child().show();\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>super.show()</code>가 부모 메서드를 먼저 호출한다.</p>",
+    "acceptedAnswer": "PC"
+  },
+  {
+    "id": 105,
+    "chapter": "제11장 상속과 super",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Parent {\n    Parent() { System.out.print(&quot;P&quot;); }\n}\nclass Child extends Parent {\n    Child() { System.out.print(&quot;C&quot;); }\n}\nclass Main {\n    public static void main(String[] args) {\n        new Child();\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>자식 객체 생성 시 부모 생성자가 먼저 실행된다.</p>",
+    "acceptedAnswer": "PC"
+  },
+  {
+    "id": 106,
+    "chapter": "제11장 상속과 super",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class A {\n    A() { System.out.print(&quot;A&quot;); }\n}\nclass B extends A {\n    B() { System.out.print(&quot;B&quot;); }\n}\nclass C extends B {\n    C() { System.out.print(&quot;C&quot;); }\n}\nclass Main {\n    public static void main(String[] args) {\n        new C();\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>상속 관계에서 조상 생성자부터 차례대로 호출된다.</p>",
+    "acceptedAnswer": "ABC"
+  },
+  {
+    "id": 107,
+    "chapter": "제11장 상속과 super",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class A {\n    int x = 1;\n}\nclass B extends A {\n    int x = 2;\n    void print() { System.out.print(super.x + x); }\n}\nclass Main {\n    public static void main(String[] args) {\n        new B().print();\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>super.x</code>는 부모 필드 1, <code>x</code>는 자식 필드 2이다.</p>",
+    "acceptedAnswer": "3"
+  },
+  {
+    "id": 108,
+    "chapter": "제11장 상속과 super",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class A {\n    String name = &quot;A&quot;;\n}\nclass B extends A {\n    String name = &quot;B&quot;;\n    void print() { System.out.print(super.name + name); }\n}\nclass Main {\n    public static void main(String[] args) {\n        new B().print();\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>super.name</code>은 부모 필드를 가리킨다.</p>",
+    "acceptedAnswer": "AB"
+  },
+  {
+    "id": 109,
+    "chapter": "제11장 상속과 super",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class A {\n    void m() { System.out.print(&quot;A&quot;); }\n}\nclass B extends A {\n    void m() { System.out.print(&quot;B&quot;); }\n}\nclass Main {\n    public static void main(String[] args) {\n        A obj = new B();\n        obj.m();\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>오버라이딩된 메서드는 실제 객체 타입 기준으로 실행된다.</p>",
+    "acceptedAnswer": "B"
+  },
+  {
+    "id": 110,
+    "chapter": "제11장 상속과 super",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class A {\n    A() { System.out.print(&quot;A&quot;); }\n}\nclass B extends A {\n    B(int x) { System.out.print(x); }\n}\nclass Main {\n    public static void main(String[] args) {\n        new B(5);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>자식 생성자 실행 전 부모 기본 생성자가 먼저 호출된다.</p>",
+    "acceptedAnswer": "A5"
+  },
+  {
+    "id": 111,
+    "chapter": "제12장 오버로딩과 오버라이딩",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Test {\n    int add(int a, int b) { return a + b; }\n    int add(int a, int b, int c) { return a + b + c; }\n}\nclass Main {\n    public static void main(String[] args) {\n        Test t = new Test();\n        System.out.print(t.add(1, 2, 3));\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>매개변수 3개를 받는 오버로딩 메서드가 호출된다.</p>",
+    "acceptedAnswer": "6"
+  },
+  {
+    "id": 112,
+    "chapter": "제12장 오버로딩과 오버라이딩",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Test {\n    void print(int x) { System.out.print(&quot;I&quot;); }\n    void print(String x) { System.out.print(&quot;S&quot;); }\n}\nclass Main {\n    public static void main(String[] args) {\n        new Test().print(&quot;A&quot;);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>문자열 인자를 받는 메서드가 선택된다.</p>",
+    "acceptedAnswer": "S"
+  },
+  {
+    "id": 113,
+    "chapter": "제12장 오버로딩과 오버라이딩",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Test {\n    void print(int x) { System.out.print(&quot;I&quot;); }\n    void print(double x) { System.out.print(&quot;D&quot;); }\n}\nclass Main {\n    public static void main(String[] args) {\n        new Test().print(3);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>정수 리터럴 3은 <code>int</code> 매개변수와 정확히 맞는다.</p>",
+    "acceptedAnswer": "I"
+  },
+  {
+    "id": 114,
+    "chapter": "제12장 오버로딩과 오버라이딩",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class A {\n    void run() { System.out.print(&quot;A&quot;); }\n}\nclass B extends A {\n    void run() { System.out.print(&quot;B&quot;); }\n}\nclass Main {\n    public static void main(String[] args) {\n        A a = new B();\n        a.run();\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>오버라이딩 메서드는 실제 객체 타입에 따라 실행된다.</p>",
+    "acceptedAnswer": "B"
+  },
+  {
+    "id": 115,
+    "chapter": "제12장 오버로딩과 오버라이딩",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class A {\n    String get() { return &quot;A&quot;; }\n}\nclass B extends A {\n    String get() { return &quot;B&quot;; }\n}\nclass Main {\n    public static void main(String[] args) {\n        System.out.print(new B().get());\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>자식 클래스의 <code>get()</code>이 부모 메서드를 재정의했다.</p>",
+    "acceptedAnswer": "B"
+  },
+  {
+    "id": 116,
+    "chapter": "제12장 오버로딩과 오버라이딩",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class A {\n    void show() { System.out.print(&quot;A&quot;); }\n}\nclass B extends A {\n    void show(int x) { System.out.print(x); }\n}\nclass Main {\n    public static void main(String[] args) {\n        B b = new B();\n        b.show();\n        b.show(3);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>매개변수가 다른 <code>show</code>는 오버로딩이며, 부모 메서드도 사용할 수 있다.</p>",
+    "acceptedAnswer": "A3"
+  },
+  {
+    "id": 117,
+    "chapter": "제12장 오버로딩과 오버라이딩",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Test {\n    int f(int x) { return x + 1; }\n    int f(int x, int y) { return x * y; }\n}\nclass Main {\n    public static void main(String[] args) {\n        Test t = new Test();\n        System.out.print(t.f(2) + t.f(2, 3));\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>f(2)</code>는 3, <code>f(2,3)</code>은 6이므로 합은 9이다.</p>",
+    "acceptedAnswer": "9"
+  },
+  {
+    "id": 118,
+    "chapter": "제12장 오버로딩과 오버라이딩",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class A {\n    int calc() { return 1; }\n}\nclass B extends A {\n    int calc() { return 2; }\n}\nclass Main {\n    public static void main(String[] args) {\n        A a = new B();\n        System.out.print(a.calc());\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>부모 타입 변수라도 실제 객체가 <code>B</code>이므로 <code>B</code>의 메서드가 실행된다.</p>",
+    "acceptedAnswer": "2"
+  },
+  {
+    "id": 119,
+    "chapter": "제12장 오버로딩과 오버라이딩",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Test {\n    static int f(int x) { return x * 2; }\n    static int f(String s) { return s.length(); }\n}\nclass Main {\n    public static void main(String[] args) {\n        System.out.print(Test.f(&quot;JAVA&quot;));\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>문자열 인자를 받는 메서드가 호출되어 문자열 길이 4를 반환한다.</p>",
+    "acceptedAnswer": "4"
+  },
+  {
+    "id": 120,
+    "chapter": "제12장 오버로딩과 오버라이딩",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class A {\n    void m() { System.out.print(&quot;A&quot;); }\n}\nclass B extends A {\n    void m() { System.out.print(&quot;B&quot;); }\n}\nclass C extends B {\n    void m() { System.out.print(&quot;C&quot;); }\n}\nclass Main {\n    public static void main(String[] args) {\n        A obj = new C();\n        obj.m();\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>최종 실제 객체 타입은 <code>C</code>이므로 <code>C</code>의 메서드가 실행된다.</p>",
+    "acceptedAnswer": "C"
+  },
+  {
+    "id": 121,
+    "chapter": "제13장 인터페이스와 다형성",
+    "questionHtml": "<p>다음 코드가 올바르게 실행되도록 빈칸에 들어갈 키워드를 쓰시오.</p><pre><code class=\"language-java\">(      ) Op {\n    int calc(int a, int b);\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>추상 메서드의 규격을 정의할 때 <code>interface</code>를 사용할 수 있다.</p>",
+    "acceptedAnswer": "interface"
+  },
+  {
+    "id": 122,
+    "chapter": "제13장 인터페이스와 다형성",
+    "questionHtml": "<p>다음 코드가 올바르게 실행되도록 빈칸에 들어갈 키워드를 쓰시오.</p><pre><code class=\"language-java\">interface Op {\n    int calc(int a, int b);\n}\nclass Add (      ) Op {\n    public int calc(int a, int b) {\n        return a + b;\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>클래스가 인터페이스를 구현할 때는 <code>implements</code>를 사용한다.</p>",
+    "acceptedAnswer": "implements"
+  },
+  {
+    "id": 123,
+    "chapter": "제13장 인터페이스와 다형성",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">interface Op {\n    int calc(int a, int b);\n}\nclass Add implements Op {\n    public int calc(int a, int b) { return a + b; }\n}\nclass Main {\n    public static void main(String[] args) {\n        Op op = new Add();\n        System.out.print(op.calc(4, 5));\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>인터페이스 타입 변수에 구현 클래스 객체를 대입하고 메서드를 호출할 수 있다.</p>",
+    "acceptedAnswer": "9"
+  },
+  {
+    "id": 124,
+    "chapter": "제13장 인터페이스와 다형성",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">interface Op {\n    int calc(int a, int b);\n}\nclass Mul implements Op {\n    public int calc(int a, int b) { return a * b; }\n}\nclass Main {\n    public static void main(String[] args) {\n        Op op = new Mul();\n        System.out.print(op.calc(3, 4));\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>구현 클래스 <code>Mul</code>의 <code>calc</code> 메서드가 실행된다.</p>",
+    "acceptedAnswer": "12"
+  },
+  {
+    "id": 125,
+    "chapter": "제13장 인터페이스와 다형성",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">interface Sound {\n    void play();\n}\nclass Bell implements Sound {\n    public void play() { System.out.print(&quot;DING&quot;); }\n}\nclass Main {\n    public static void main(String[] args) {\n        Sound s = new Bell();\n        s.play();\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>인터페이스 타입으로 구현 객체의 메서드를 호출한다.</p>",
+    "acceptedAnswer": "DING"
+  },
+  {
+    "id": 126,
+    "chapter": "제13장 인터페이스와 다형성",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">interface A {\n    int get();\n}\nclass B implements A {\n    public int get() { return 10; }\n}\nclass Main {\n    public static void main(String[] args) {\n        A a = new B();\n        System.out.print(a.get());\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>인터페이스에 선언된 메서드를 구현 클래스에서 구현했다.</p>",
+    "acceptedAnswer": "10"
+  },
+  {
+    "id": 127,
+    "chapter": "제13장 인터페이스와 다형성",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">interface Shape {\n    int area();\n}\nclass Square implements Shape {\n    int n;\n    Square(int n) { this.n = n; }\n    public int area() { return n * n; }\n}\nclass Main {\n    public static void main(String[] args) {\n        Shape s = new Square(5);\n        System.out.print(s.area());\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>정사각형의 넓이를 반환하는 구현 메서드가 실행된다.</p>",
+    "acceptedAnswer": "25"
+  },
+  {
+    "id": 128,
+    "chapter": "제13장 인터페이스와 다형성",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">interface X {\n    void print();\n}\nclass Y implements X {\n    public void print() { System.out.print(&quot;Y&quot;); }\n}\nclass Z implements X {\n    public void print() { System.out.print(&quot;Z&quot;); }\n}\nclass Main {\n    public static void main(String[] args) {\n        X x = new Z();\n        x.print();\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>실제 객체가 <code>Z</code>이므로 <code>Z</code>의 메서드가 실행된다.</p>",
+    "acceptedAnswer": "Z"
+  },
+  {
+    "id": 129,
+    "chapter": "제13장 인터페이스와 다형성",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">abstract class A {\n    abstract int get();\n}\nclass B extends A {\n    int get() { return 3; }\n}\nclass Main {\n    public static void main(String[] args) {\n        A a = new B();\n        System.out.print(a.get());\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>추상 클래스 타입 변수로 자식 객체를 참조할 수 있다.</p>",
+    "acceptedAnswer": "3"
+  },
+  {
+    "id": 130,
+    "chapter": "제13장 인터페이스와 다형성",
+    "questionHtml": "<p>다음 설명에 해당하는 키워드를 쓰시오.</p><p>부모 클래스의 기능을 물려받아 자식 클래스를 만들 때 사용하는 키워드이다.</p>",
+    "type": "short",
+    "explanationHtml": "<p>클래스 상속에는 <code>extends</code>를 사용한다.</p>",
+    "acceptedAnswer": "extends"
+  },
+  {
+    "id": 131,
+    "chapter": "제14장 오류 찾기와 코드 수정",
+    "questionHtml": "<p>다음 Java 코드에서 컴파일 오류가 발생하는 줄 번호를 쓰시오.</p><pre><code class=\"language-java\">1 class Main {\n2     public static void main(String[] args) {\n3         int x = &quot;10&quot;;\n4         System.out.print(x);\n5     }\n6 }</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>int</code> 변수에는 문자열 <code>\"10\"</code>을 그대로 대입할 수 없다.</p>",
+    "acceptedAnswer": "3"
+  },
+  {
+    "id": 132,
+    "chapter": "제14장 오류 찾기와 코드 수정",
+    "questionHtml": "<p>다음 Java 코드에서 컴파일 오류가 발생하는 줄 번호를 쓰시오.</p><pre><code class=\"language-java\">1 class Main {\n2     public static void main(String[] args) {\n3         int a = 10\n4         System.out.print(a);\n5     }\n6 }</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>Java 문장 끝에는 세미콜론이 필요하다.</p>",
+    "acceptedAnswer": "3"
+  },
+  {
+    "id": 133,
+    "chapter": "제14장 오류 찾기와 코드 수정",
+    "questionHtml": "<p>다음 Java 코드가 올바르게 실행되도록 빈칸에 들어갈 반환형을 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    static (      ) add(int a, int b) {\n        return a + b;\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>정수 합을 반환하므로 반환형은 <code>int</code>이다.</p>",
+    "acceptedAnswer": "int"
+  },
+  {
+    "id": 134,
+    "chapter": "제14장 오류 찾기와 코드 수정",
+    "questionHtml": "<p>다음 Java 코드에서 컴파일 오류가 발생하는 줄 번호를 쓰시오.</p><pre><code class=\"language-java\">1 class Main {\n2     public static void main(String[] args) {\n3         String s = &quot;JAVA&quot;;\n4         System.out.print(s.length);\n5     }\n6 }</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>문자열 길이는 <code>length</code>가 아니라 <code>length()</code> 메서드로 구한다.</p>",
+    "acceptedAnswer": "4"
+  },
+  {
+    "id": 135,
+    "chapter": "제14장 오류 찾기와 코드 수정",
+    "questionHtml": "<p>다음 Java 코드가 올바르게 실행되도록 빈칸에 들어갈 코드를 쓰시오.</p><pre><code class=\"language-java\">String a = new String(&quot;A&quot;);\nString b = new String(&quot;A&quot;);\nif (a.(      )(b)) {\n    System.out.print(&quot;same&quot;);\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>문자열 내용 비교에는 <code>equals()</code>를 사용한다.</p>",
+    "acceptedAnswer": "equals"
+  },
+  {
+    "id": 136,
+    "chapter": "제14장 오류 찾기와 코드 수정",
+    "questionHtml": "<p>다음 Java 코드에서 컴파일 오류가 발생하는 줄 번호를 쓰시오.</p><pre><code class=\"language-java\">1 interface Test {\n2     int calc(int x);\n3 }\n4 class A implements Test {\n5     int calc(int x) { return x * 2; }\n6 }</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>인터페이스 메서드를 구현할 때 접근 제한자는 더 좁게 만들 수 없으므로 <code>public</code>이 필요하다.</p>",
+    "acceptedAnswer": "5"
+  },
+  {
+    "id": 137,
+    "chapter": "제14장 오류 찾기와 코드 수정",
+    "questionHtml": "<p>다음 Java 코드에서 컴파일 오류가 발생하는 줄 번호를 쓰시오.</p><pre><code class=\"language-java\">1 class A {\n2     A(int x) { }\n3 }\n4 class B extends A {\n5     B() { System.out.print(&quot;B&quot;); }\n6 }</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>부모 클래스에 기본 생성자가 없으므로 자식 생성자에서 <code>super(...)</code>를 명시해야 한다.</p>",
+    "acceptedAnswer": "5"
+  },
+  {
+    "id": 138,
+    "chapter": "제14장 오류 찾기와 코드 수정",
+    "questionHtml": "<p>다음 Java 코드의 오류를 수정하기 위해 빈칸에 들어갈 코드를 쓰시오.</p><pre><code class=\"language-java\">class A {\n    A(int x) { System.out.print(x); }\n}\nclass B extends A {\n    B() {\n        (      );\n        System.out.print(&quot;B&quot;);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>부모 생성자 <code>A(int x)</code>를 호출하기 위해 <code>super(1)</code>과 같이 인자를 전달한다.</p>",
+    "acceptedAnswer": "super(1)"
+  },
+  {
+    "id": 139,
+    "chapter": "제14장 오류 찾기와 코드 수정",
+    "questionHtml": "<p>다음 Java 코드에서 빈칸에 들어갈 알맞은 키워드를 쓰시오.</p><pre><code class=\"language-java\">class Child (      ) Parent {\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>클래스 상속은 <code>extends</code>를 사용한다.</p>",
+    "acceptedAnswer": "extends"
+  },
+  {
+    "id": 140,
+    "chapter": "제14장 오류 찾기와 코드 수정",
+    "questionHtml": "<p>다음 Java 코드에서 빈칸에 들어갈 알맞은 키워드를 쓰시오.</p><pre><code class=\"language-java\">class Add (      ) Op {\n    public int calc(int a, int b) {\n        return a + b;\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>인터페이스 구현은 <code>implements</code>를 사용한다.</p>",
+    "acceptedAnswer": "implements"
+  },
+  {
+    "id": 141,
+    "chapter": "제15장 실전 코드 실행 결과",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">interface Op {\n    int calc(int a, int b);\n}\nclass Add implements Op {\n    public int calc(int a, int b) { return a + b; }\n}\nclass Main {\n    public static void main(String[] args) {\n        int a = 10, b = 5;\n        Op op = new Add();\n        System.out.print(op.calc(a, b));\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>인터페이스 타입 변수에 <code>Add</code> 객체를 대입하고 합계를 계산한다.</p>",
+    "acceptedAnswer": "15"
+  },
+  {
+    "id": 142,
+    "chapter": "제15장 실전 코드 실행 결과",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        String t1 = new String(&quot;ASDF&quot;);\n        String t2 = new String(&quot;ASDF&quot;);\n        if (t1 == t2) System.out.print(t1);\n        else System.out.print(t1 + t2);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>new String()</code> 객체끼리 <code>==</code>로 비교하면 참조가 달라 <code>false</code>이다.</p>",
+    "acceptedAnswer": "ASDFASDF"
+  },
+  {
+    "id": 143,
+    "chapter": "제15장 실전 코드 실행 결과",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Test1 {\n    Test1() { System.out.print(&#x27;X&#x27;); }\n    Test1(char a) {\n        this();\n        System.out.print(a);\n    }\n}\nclass Test2 extends Test1 {\n    Test2() {\n        super();\n        System.out.print(&#x27;Y&#x27;);\n    }\n    Test2(char a) {\n        this();\n        System.out.print(a);\n    }\n}\nclass Main {\n    public static void main(String[] args) {\n        Test1 t1 = new Test2(&#x27;Z&#x27;);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>Test2(char)</code> → <code>this()</code> → <code>Test2()</code> → <code>super()</code> → <code>Test1()</code> 순서로 호출된다.</p>",
+    "acceptedAnswer": "XYZ"
+  },
+  {
+    "id": 144,
+    "chapter": "제15장 실전 코드 실행 결과",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">interface Test {\n    int multiply(int v1);\n}\nclass Recal implements Test {\n    public int multiply(int v1) { return v1 * v1; }\n}\nclass Main {\n    public static void main(String[] args) {\n        Recal a = new Recal();\n        System.out.print(a.multiply(10));\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>10 × 10의 결과인 100이 출력된다.</p>",
+    "acceptedAnswer": "100"
+  },
+  {
+    "id": 145,
+    "chapter": "제15장 실전 코드 실행 결과",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    public static void main(String[] args) {\n        String a = &quot;helloworld&quot;;\n        String b = &quot;helloworld&quot;;\n        String result = (a == b) ? &quot;1&quot; : &quot;2&quot;;\n        System.out.print(result);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>문자열 리터럴은 같은 문자열 풀 객체를 참조하므로 이 경우 <code>==</code> 결과가 참이다.</p>",
+    "acceptedAnswer": "1"
+  },
+  {
+    "id": 146,
+    "chapter": "제15장 실전 코드 실행 결과",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class T1 {\n    T1() { System.out.print(&#x27;A&#x27;); }\n    T1(char a) { System.out.print(&#x27;a&#x27;); }\n}\nclass T2 extends T1 {\n    T2() { System.out.print(&#x27;B&#x27;); }\n    T2(char a) { System.out.printf(&quot;%c%c&quot;, a, a); }\n}\nclass Main {\n    public static void main(String[] args) {\n        T1 t = new T2(&#x27;c&#x27;);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p><code>T2(char)</code> 실행 전 부모 기본 생성자 <code>T1()</code>이 먼저 호출되어 <code>A</code>가 출력된다.</p>",
+    "acceptedAnswer": "Acc"
+  },
+  {
+    "id": 147,
+    "chapter": "제15장 실전 코드 실행 결과",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class A {\n    A() { System.out.print(&quot;A&quot;); }\n    void run() { System.out.print(&quot;1&quot;); }\n}\nclass B extends A {\n    B() { System.out.print(&quot;B&quot;); }\n    void run() { System.out.print(&quot;2&quot;); }\n}\nclass Main {\n    public static void main(String[] args) {\n        A obj = new B();\n        obj.run();\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>객체 생성 시 <code>A</code>, <code>B</code> 생성자가 순서대로 실행되고, 오버라이딩된 <code>B.run()</code>이 호출된다.</p>",
+    "acceptedAnswer": "AB2"
+  },
+  {
+    "id": 148,
+    "chapter": "제15장 실전 코드 실행 결과",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class A {\n    int x = 1;\n    A() { x += 2; }\n}\nclass B extends A {\n    B() { x += 3; }\n}\nclass Main {\n    public static void main(String[] args) {\n        B b = new B();\n        System.out.print(b.x);\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>초기값 1에서 부모 생성자로 3, 자식 생성자로 6이 된다.</p>",
+    "acceptedAnswer": "6"
+  },
+  {
+    "id": 149,
+    "chapter": "제15장 실전 코드 실행 결과",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">class Main {\n    static int test(int n) {\n        if (n == 1) return 1;\n        return n + test(n - 1);\n    }\n    public static void main(String[] args) {\n        System.out.print(test(4));\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>4+3+2+1의 결과는 10이다.</p>",
+    "acceptedAnswer": "10"
+  },
+  {
+    "id": 150,
+    "chapter": "제15장 실전 코드 실행 결과",
+    "questionHtml": "<p>다음 Java 프로그램의 실행 결과를 쓰시오.</p><pre><code class=\"language-java\">interface A {\n    void print();\n}\nclass B implements A {\n    public void print() { System.out.print(&quot;B&quot;); }\n}\nclass C extends B {\n    public void print() { System.out.print(&quot;C&quot;); }\n}\nclass Main {\n    public static void main(String[] args) {\n        A a = new C();\n        a.print();\n    }\n}</code></pre>",
+    "type": "short",
+    "explanationHtml": "<p>인터페이스 타입 변수라도 실제 객체가 <code>C</code>이므로 <code>C</code>의 메서드가 실행된다.</p>",
+    "acceptedAnswer": "C"
+  }
+]
