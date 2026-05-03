@@ -1,6 +1,6 @@
 {
   "name": "programming-skills-bank-mvp",
-  "version": "0.7.4.3-deployment-docs",
+  "version": "0.7.4.4-vercel-site-url",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",

@@ -11,7 +11,7 @@ const ogDescription =
   "SQL·Python·Java·Linux 실전형 문제를 무료 베타로 학습하세요. 회원가입 시 전체 620문항을 이용할 수 있습니다.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://programming-skills-bank-mvp.vercel.app"),
   title: {
     default: searchTitle,
     template: `%s | ${brandName}`
