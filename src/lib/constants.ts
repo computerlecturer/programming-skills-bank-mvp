@@ -1,4 +1,4 @@
-export const SERVICE_VERSION = "v7.4.5-google-search-console";
+export const SERVICE_VERSION = "v7.4.6-naver-search-advisor";
 
 // 베타 회원제 정책
 // 비회원은 과목별 50문항까지 무료 이용, 로그인 회원은 베타 기간 전체 문제 이용 가능

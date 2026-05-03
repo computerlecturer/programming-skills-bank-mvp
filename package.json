@@ -1,6 +1,6 @@
 {
   "name": "programming-skills-bank-mvp",
-  "version": "0.7.4.5-google-search-console",
+  "version": "0.7.4.6-naver-search-advisor",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",

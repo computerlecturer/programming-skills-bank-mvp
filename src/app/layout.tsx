@@ -71,7 +71,10 @@ export const metadata: Metadata = {
     images: ["/og-image.svg"]
   },
   verification: {
-    google: "Dul9L_MO-9ZCdGboLS-vpBOY8_RJLVXWqmfWs5MS-GA"
+    google: "Dul9L_MO-9ZCdGboLS-vpBOY8_RJLVXWqmfWs5MS-GA",
+    other: {
+      "naver-site-verification": "7390308d11c00b114e5f9d8730b5561533dcff47"
+    }
   },
   robots: {
     index: true,
