@@ -70,6 +70,9 @@ export const metadata: Metadata = {
     description: ogDescription,
     images: ["/og-image.svg"]
   },
+  verification: {
+    google: "Dul9L_MO-9ZCdGboLS-vpBOY8_RJLVXWqmfWs5MS-GA"
+  },
   robots: {
     index: true,
     follow: true
