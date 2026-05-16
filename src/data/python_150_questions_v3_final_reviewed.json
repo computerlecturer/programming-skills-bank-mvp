@@ -510,9 +510,9 @@
   {
     "id": 59,
     "chapter": "제6장 튜플과 set",
-    "questionHtml": "<p>다음 코드의 빈칸에 들어갈 알맞은 함수를 쓰시오.</p><pre><code class=\"language-python\">a = [1, 1, 2, 3]\nb = (    )(a)\nprint(len(b))</code></pre>\n",
+    "questionHtml": "<p>다음 코드는 리스트 <code>a</code>의 중복값을 제거한 뒤, 남은 값의 개수를 출력하는 프로그램이다. 빈칸에 들어갈 알맞은 함수를 쓰시오.</p><pre><code class=\"language-python\">a = [1, 1, 2, 3]\nb = (    )(a)\nprint(len(b))</code></pre>",
     "type": "short",
-    "explanationHtml": "<p>중복을 제거하여 집합 자료형으로 만들 때는 <code>set()</code>을 사용한다.</p>",
+    "explanationHtml": "<p><code>set()</code>은 중복값을 허용하지 않는 집합 자료형을 만든다. <code>[1, 1, 2, 3]</code>을 <code>set</code>으로 변환하면 중복된 <code>1</code>이 하나로 처리되어 남는 값은 <code>{1, 2, 3}</code>이고, <code>len(b)</code>의 결과는 <code>3</code>이다.</p>",
     "acceptedAnswer": "set"
   },
   {
@@ -672,9 +672,9 @@
   {
     "id": 77,
     "chapter": "제8장 인덱싱과 슬라이싱",
-    "questionHtml": "<p>다음 코드의 빈칸에 들어갈 알맞은 인덱스를 쓰시오.</p><pre><code class=\"language-python\">a = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;]\nprint(a[(    )])</code></pre>\n<p>조건: 마지막 값인 <code>C</code>가 출력되도록 한다.</p>",
+    "questionHtml": "<p>다음 코드는 리스트의 마지막 값을 <strong>음수 인덱스</strong>로 출력하는 프로그램이다. 빈칸에 들어갈 알맞은 인덱스를 쓰시오.</p><pre><code class=\"language-python\">a = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;]\nprint(a[(    )])</code></pre><p>조건: 양수 인덱스 <code>2</code>가 아니라, 뒤에서부터 접근하는 음수 인덱스를 사용한다.</p>",
     "type": "short",
-    "explanationHtml": "<p>마지막 원소는 <code>-1</code> 인덱스로 접근할 수 있다.</p>",
+    "explanationHtml": "<p>Python에서 음수 인덱스 <code>-1</code>은 마지막 원소를 의미한다. <code>a[2]</code>도 <code>C</code>를 출력할 수 있지만, 이 문제는 음수 인덱스를 사용하라는 조건이 있으므로 정답은 <code>-1</code>이다.</p>",
     "acceptedAnswer": "-1"
   },
   {

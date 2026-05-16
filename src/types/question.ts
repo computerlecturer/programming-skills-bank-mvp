@@ -70,6 +70,12 @@ export type UserAnswer = TextAnswer | TableAnswer | LegacyTableAnswer;
 
 export type ProgressStatus = "correct" | "wrong";
 
+export type AnswerReveal = {
+  subject: SubjectId;
+  questionNo: number;
+  revealedAt: string;
+};
+
 export type ProgressItem = {
   subject: SubjectId;
   questionNo: number;

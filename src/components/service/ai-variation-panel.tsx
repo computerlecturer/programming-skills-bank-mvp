@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { LockKeyhole, Sparkles, WandSparkles } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button, ButtonLink } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { AI_DAILY_LIMIT, AI_READY_MESSAGE, AI_VARIATION_MODE_LABEL } from "@/lib/constants";
 import type { AiVariationMode } from "@/lib/constants";
 import { getServiceUser, getTodayAiRemainingAsync, isAdminUser, recordAiUsage, refreshServiceUser, subscribeServiceAuthChanges } from "@/lib/service-auth";
@@ -79,32 +78,31 @@ export function AiVariationPanel({
   };
 
   return (
-    <Card className="border-violet-100 bg-gradient-to-br from-violet-50 via-white to-blue-50 shadow-none">
-      <CardContent className="p-5 sm:p-6">
-        <div className="flex min-w-0 flex-col gap-4">
-          <div>
-            <div className="mb-2 flex flex-wrap items-center gap-2">
-              <Badge variant="premium"><WandSparkles className="mr-1 size-4" /> AI 문제 변형</Badge>
-              <Badge variant={adminCanTest ? "success" : "outline"}>오늘 남은 횟수 {remaining}/{AI_DAILY_LIMIT}</Badge>
-              {admin ? <Badge variant="dark">관리자 테스트</Badge> : <Badge variant="warning">서비스 준비중</Badge>}
-            </div>
-            <h3 className="text-lg font-black text-slate-950">정답을 맞힌 문제에서 추가 연습 문제를 만들 수 있도록 준비 중입니다.</h3>
-            <p className="mt-2 text-sm font-semibold leading-6 text-slate-600">{reason}</p>
-          </div>
-          <div className="grid min-w-0 grid-cols-1 gap-2 sm:grid-cols-2 lg:max-w-2xl">
-            {!loggedIn ? (
-              <ButtonLink href="/login" variant="premium" size="lg" className="w-full justify-center whitespace-normal"><LockKeyhole className="size-4 shrink-0" /> 로그인하기</ButtonLink>
-            ) : null}
-            <Button disabled={!canClickMode} onClick={() => handlePrepare("same_level")} variant="outline" size="lg" className="w-full min-w-0 justify-center whitespace-normal px-3 text-sm sm:text-base">
-              <Sparkles className="size-4 shrink-0" /> 현재 난이도 유지
-            </Button>
-            <Button disabled={!canClickMode} onClick={() => handlePrepare("harder")} variant="outline" size="lg" className="w-full min-w-0 justify-center whitespace-normal px-3 text-sm sm:text-base">
-              <WandSparkles className="size-4 shrink-0" /> 난이도 높이기
-            </Button>
-          </div>
+    <details className="rounded-[1.5rem] border border-violet-100 bg-white/80 p-4 shadow-sm">
+      <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-sm font-black text-violet-950">
+        <span className="flex items-center gap-2"><WandSparkles className="size-4 text-violet-600" /> AI 변형 문제 기능 안내</span>
+        {admin ? <Badge variant="dark">관리자 테스트</Badge> : <Badge variant="warning">서비스 준비중</Badge>}
+      </summary>
+      <div className="mt-4 rounded-2xl bg-gradient-to-br from-violet-50 via-white to-blue-50 p-4 ring-1 ring-violet-100">
+        <div className="mb-3 flex flex-wrap items-center gap-2">
+          <Badge variant="premium"><WandSparkles className="mr-1 size-4" /> 추가 연습</Badge>
+          <Badge variant={adminCanTest ? "success" : "outline"}>오늘 남은 횟수 {remaining}/{AI_DAILY_LIMIT}</Badge>
+        </div>
+        <h3 className="text-base font-black text-slate-950">정답을 맞힌 문제에서 비슷한 문제를 만들어 연습할 수 있도록 준비 중입니다.</h3>
+        <p className="mt-2 text-sm font-semibold leading-6 text-slate-600">{reason}</p>
+        <div className="mt-4 grid min-w-0 grid-cols-1 gap-2 sm:grid-cols-2 lg:max-w-2xl">
+          {!loggedIn ? (
+            <ButtonLink href="/login" variant="premium" size="lg" className="w-full justify-center whitespace-normal"><LockKeyhole className="size-4 shrink-0" /> 로그인하기</ButtonLink>
+          ) : null}
+          <Button disabled={!canClickMode} onClick={() => handlePrepare("same_level")} variant="outline" size="lg" className="w-full min-w-0 justify-center whitespace-normal px-3 text-sm sm:text-base">
+            <Sparkles className="size-4 shrink-0" /> 현재 난이도 유지
+          </Button>
+          <Button disabled={!canClickMode} onClick={() => handlePrepare("harder")} variant="outline" size="lg" className="w-full min-w-0 justify-center whitespace-normal px-3 text-sm sm:text-base">
+            <WandSparkles className="size-4 shrink-0" /> 난이도 높이기
+          </Button>
         </div>
         {message ? <div className="mt-4 rounded-2xl border border-violet-100 bg-white p-4 text-sm font-semibold leading-6 text-violet-900">{message}</div> : null}
-      </CardContent>
-    </Card>
+      </div>
+    </details>
   );
 }

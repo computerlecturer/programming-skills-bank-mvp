@@ -9,6 +9,7 @@ import {
   Check,
   CheckCircle2,
   Clock3,
+  Eye,
   Filter,
   Flag,
   Grid3X3,
@@ -36,13 +37,15 @@ import { Progress } from "@/components/ui/progress";
 import { BETA_UNLOCK_ALL, FREE_LIMIT_PER_SUBJECT } from "@/lib/constants";
 import { submitQuestionReport } from "@/lib/question-report-service";
 import { hasBetaFullAccessAsync, subscribeServiceAuthChanges } from "@/lib/service-auth";
-import { gradeQuestion } from "@/lib/grading";
+import { getDisplayAnswer, gradeQuestion } from "@/lib/grading";
 import { getQuestionTypeLabel } from "@/lib/question-labels";
 import { getStudyGuide } from "@/lib/study-guide";
 import {
   addWrongNote,
   getMemo,
   getPracticeMode,
+  getProgressItem,
+  getSubjectAnswerReveals,
   getSubjectProgress,
   isFavoriteQuestion,
   markWrongNoteReviewed,
@@ -50,10 +53,11 @@ import {
   saveMemo,
   savePracticeMode,
   saveProgress,
+  saveAnswerReveal,
   toggleFavoriteQuestion
 } from "@/lib/storage";
 import { cn, toPercent } from "@/lib/utils";
-import type { IssueReportType, PracticeMode, ProgressStatus, Question, QuestionType, SubjectMeta, UserAnswer } from "@/types/question";
+import type { IssueReportType, PracticeMode, ProgressStatus, Question, QuestionType, SubjectMeta, TableAnswer, UserAnswer } from "@/types/question";
 
 type Props = {
   subject: SubjectMeta;
@@ -61,7 +65,7 @@ type Props = {
   initialQuestionNo: number;
 };
 
-type StatusFilter = "all" | "unsolved" | "correct" | "wrong" | "free" | "locked";
+type StatusFilter = "all" | "unsolved" | "correct" | "wrong" | "revealed" | "free" | "locked";
 type TypeFilter = "all" | QuestionType;
 
 function emptyAnswer(question: Question): UserAnswer {
@@ -73,6 +77,68 @@ function statusClass(status?: ProgressStatus) {
   if (status === "correct") return "border-emerald-200 bg-emerald-50 text-emerald-700 hover:bg-emerald-100";
   if (status === "wrong") return "border-red-200 bg-red-50 text-red-700 hover:bg-red-100";
   return "border-slate-200 bg-white text-slate-600 hover:bg-slate-50";
+}
+
+function revealedClass() {
+  return "border-amber-200 bg-amber-50 text-amber-700 hover:bg-amber-100";
+}
+
+function isTableAnswer(value: string | TableAnswer): value is TableAnswer {
+  return typeof value === "object" && value !== null && "columns" in value && "rows" in value;
+}
+
+function AnswerRevealBox({ question, onRetry }: { question: Question; onRetry: () => void }) {
+  const answer = getDisplayAnswer(question);
+
+  return (
+    <Card className="overflow-hidden border-amber-200 bg-amber-50/70 shadow-none">
+      <CardContent className="space-y-5 p-5 text-amber-950 sm:p-6">
+        <div className="flex gap-4">
+          <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-amber-500 text-white shadow-lg shadow-amber-500/20">
+            <Eye className="size-6" />
+          </div>
+          <div className="min-w-0 flex-1">
+            <Badge variant="warning" className="mb-2">정답 공개</Badge>
+            <div className="text-xl font-black tracking-[-0.03em] text-slate-950">정답을 확인했습니다.</div>
+            <p className="mt-1 text-sm font-semibold leading-6 text-amber-800/90">이 문제는 ‘답 봄’으로 기록되며 직접 맞힌 문제에는 포함되지 않습니다. 다시 풀기를 누르면 정답을 가리고 스스로 채점할 수 있습니다.</p>
+            {typeof answer === "string" ? (
+              <pre className="mt-4 whitespace-pre-wrap rounded-2xl bg-white p-4 text-sm font-semibold text-slate-900 shadow-sm ring-1 ring-amber-100">{answer}</pre>
+            ) : isTableAnswer(answer) ? (
+              <div className="mt-4 overflow-x-auto rounded-2xl bg-white shadow-sm ring-1 ring-amber-100">
+                <table className="w-full min-w-[320px] text-sm">
+                  {answer.columns.length ? (
+                    <thead>
+                      <tr className="bg-amber-50 text-amber-900">
+                        {answer.columns.map((column, index) => (
+                          <th className="border-b border-amber-100 px-3 py-2 text-left font-black" key={`${column}-${index}`}>{column}</th>
+                        ))}
+                      </tr>
+                    </thead>
+                  ) : null}
+                  <tbody>
+                    {answer.rows.map((row, index) => (
+                      <tr key={index}>
+                        {row.map((cell, cellIndex) => <td className="border-b border-amber-50 px-3 py-2 font-semibold text-slate-900" key={cellIndex}>{cell}</td>)}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            ) : null}
+          </div>
+        </div>
+        <div className="rounded-[1.5rem] bg-white p-5 text-slate-800 shadow-sm ring-1 ring-amber-100">
+          <div className="mb-3 flex items-center gap-2 text-sm font-black text-slate-950"><BookOpen className="size-4 text-blue-600" /> 해설</div>
+          <div className="prose-question" dangerouslySetInnerHTML={{ __html: question.explanationHtml }} />
+        </div>
+        <div className="flex flex-col gap-2 sm:flex-row sm:justify-end">
+          <Button type="button" variant="outline" onClick={onRetry} className="border-amber-200 bg-white text-amber-800 hover:bg-amber-100">
+            <RotateCcw className="size-4" /> 직접 다시 풀기
+          </Button>
+        </div>
+      </CardContent>
+    </Card>
+  );
 }
 
 function formatTime(seconds: number) {
@@ -228,6 +294,7 @@ export function QuestionPlayer({ subject, questions, initialQuestionNo }: Props)
   const [answer, setAnswer] = useState<UserAnswer>(() => emptyAnswer(question));
   const [result, setResult] = useState<boolean | null>(null);
   const [statusMap, setStatusMap] = useState<Record<number, ProgressStatus>>({});
+  const [revealedMap, setRevealedMap] = useState<Record<number, boolean>>({});
   const [elapsed, setElapsed] = useState(0);
   const [mode, setMode] = useState<PracticeMode>("study");
   const [query, setQuery] = useState("");
@@ -242,20 +309,29 @@ export function QuestionPlayer({ subject, questions, initialQuestionNo }: Props)
   const [reportSubmitting, setReportSubmitting] = useState(false);
   const [reportFeedback, setReportFeedback] = useState<{ tone: "success" | "error" | "info"; text: string } | null>(null);
   const [studyOpen, setStudyOpen] = useState(false);
+  const [answerRevealed, setAnswerRevealed] = useState(false);
+  const [answerRevealSuppressed, setAnswerRevealSuppressed] = useState(false);
   const [hasMemberAccess, setHasMemberAccess] = useState(false);
   const color = subjectColorClass[subject.color];
   const studyGuide = useMemo(() => getStudyGuide(question), [question]);
   const guideQuickPoints = useMemo(() => (studyGuide.quickPoints?.length ? studyGuide.quickPoints : studyGuide.theory.slice(0, 3)), [studyGuide]);
   const guideExamples = useMemo(() => studyGuide.examples ?? [], [studyGuide]);
 
+  const accessLimit = BETA_UNLOCK_ALL || hasMemberAccess ? questions.length : Math.min(FREE_LIMIT_PER_SUBJECT, questions.length);
   const isLocked = BETA_UNLOCK_ALL ? false : (!hasMemberAccess && question.questionNo > FREE_LIMIT_PER_SUBJECT);
   const solvedCount = Object.keys(statusMap).length;
   const correctCount = Object.values(statusMap).filter((status) => status === "correct").length;
   const wrongCount = Object.values(statusMap).filter((status) => status === "wrong").length;
+  const revealedCount = Object.keys(revealedMap).filter((key) => !statusMap[Number(key)]).length;
   const progressPercent = toPercent(solvedCount, questions.length);
   const accuracy = solvedCount ? toPercent(correctCount, solvedCount) : 0;
   const freeLeft = BETA_UNLOCK_ALL ? Math.max(0, questions.length - question.questionNo) : Math.max(0, FREE_LIMIT_PER_SUBJECT - Math.min(question.questionNo, FREE_LIMIT_PER_SUBJECT));
   const solvedCorrectlyForAi = statusMap[question.questionNo] === "correct" || result === true;
+  const currentSubmitted = Boolean(statusMap[question.questionNo] || result !== null);
+  const firstUnsubmitted = questions.find((item) => item.questionNo <= accessLimit && !statusMap[item.questionNo])?.questionNo ?? accessLimit;
+  const isSequenceLocked = mode === "exam" && question.questionNo > firstUnsubmitted;
+  const canGoNext = questionNo < accessLimit && (mode === "study" || currentSubmitted);
+  const answerIsVisible = mode === "study" && result === null && !answerRevealSuppressed && (answerRevealed || revealedMap[question.questionNo]);
 
   const chapters = useMemo(() => Array.from(new Set(questions.map((item) => item.chapter))).filter(Boolean), [questions]);
   const types = useMemo(() => Array.from(new Set(questions.map((item) => item.type))) as QuestionType[], [questions]);
@@ -271,6 +347,7 @@ export function QuestionPlayer({ subject, questions, initialQuestionNo }: Props)
       if (statusFilter === "unsolved" && itemStatus) return false;
       if (statusFilter === "correct" && itemStatus !== "correct") return false;
       if (statusFilter === "wrong" && itemStatus !== "wrong") return false;
+      if (statusFilter === "revealed" && (itemStatus || !revealedMap[item.questionNo])) return false;
       if (statusFilter === "free" && locked) return false;
       if (statusFilter === "locked" && !locked) return false;
 
@@ -285,7 +362,7 @@ export function QuestionPlayer({ subject, questions, initialQuestionNo }: Props)
       ].join(" ").toLowerCase();
       return haystack.includes(search);
     });
-  }, [chapterFilter, hasMemberAccess, query, questions, statusFilter, statusMap, typeFilter]);
+  }, [chapterFilter, hasMemberAccess, query, questions, revealedMap, statusFilter, statusMap, typeFilter]);
 
   const refreshStatus = () => {
     const progress = getSubjectProgress(subject.id);
@@ -294,8 +371,16 @@ export function QuestionPlayer({ subject, questions, initialQuestionNo }: Props)
     setStatusMap(nextStatus);
   };
 
+  const refreshReveals = () => {
+    const reveals = getSubjectAnswerReveals(subject.id);
+    const nextReveals: Record<number, boolean> = {};
+    for (const item of reveals) nextReveals[item.questionNo] = true;
+    setRevealedMap(nextReveals);
+  };
+
   useEffect(() => {
     refreshStatus();
+    refreshReveals();
     setMode(getPracticeMode());
     const refreshAccess = async () => setHasMemberAccess(await hasBetaFullAccessAsync());
     void refreshAccess();
@@ -311,8 +396,11 @@ export function QuestionPlayer({ subject, questions, initialQuestionNo }: Props)
   }, []);
 
   useEffect(() => {
-    setAnswer(emptyAnswer(question));
-    setResult(null);
+    const saved = getProgressItem(subject.id, question.questionNo);
+    setAnswer(mode === "exam" && saved ? saved.answer : emptyAnswer(question));
+    setResult(mode === "exam" && saved ? saved.status === "correct" : null);
+    setAnswerRevealed(false);
+    setAnswerRevealSuppressed(false);
     setFavorite(isFavoriteQuestion(subject.id, question.questionNo));
     setMemo(getMemo(subject.id, question.questionNo));
     setMemoSaved(false);
@@ -322,16 +410,23 @@ export function QuestionPlayer({ subject, questions, initialQuestionNo }: Props)
     setReportFeedback(null);
     setStudyOpen(false);
     saveLastQuestion(subject.id, question.questionNo);
-  }, [question, subject.id]);
+  }, [mode, question, subject.id]);
 
   const changeMode = (nextMode: PracticeMode) => {
     setMode(nextMode);
     savePracticeMode(nextMode);
     setResult(null);
+    setAnswerRevealed(false);
+    setAnswerRevealSuppressed(false);
+    if (nextMode === "exam" && question.questionNo > firstUnsubmitted) {
+      goTo(firstUnsubmitted);
+    }
   };
 
   const goTo = (nextQuestionNo: number) => {
     const safeQuestionNo = Math.max(1, Math.min(questions.length, nextQuestionNo));
+    if (safeQuestionNo > accessLimit) return;
+    if (mode === "exam" && safeQuestionNo > firstUnsubmitted) return;
     setQuestionNo(safeQuestionNo);
     router.replace(`/practice/${subject.id}?q=${safeQuestionNo}`, { scroll: false });
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -339,6 +434,8 @@ export function QuestionPlayer({ subject, questions, initialQuestionNo }: Props)
 
   const handleCheck = () => {
     const isCorrect = gradeQuestion(question, answer);
+    setAnswerRevealed(false);
+    setAnswerRevealSuppressed(true);
     setResult(isCorrect);
     saveProgress(subject.id, question.questionNo, isCorrect ? "correct" : "wrong", answer);
 
@@ -359,6 +456,22 @@ export function QuestionPlayer({ subject, questions, initialQuestionNo }: Props)
     }
 
     refreshStatus();
+  };
+
+  const handleRevealAnswer = () => {
+    if (mode !== "study") return;
+    saveAnswerReveal(subject.id, question.questionNo);
+    setResult(null);
+    setAnswerRevealSuppressed(false);
+    setAnswerRevealed(true);
+    refreshReveals();
+  };
+
+  const handleRetry = () => {
+    setAnswer(emptyAnswer(question));
+    setResult(null);
+    setAnswerRevealed(false);
+    setAnswerRevealSuppressed(true);
   };
 
   const handleToggleFavorite = () => {
@@ -408,7 +521,7 @@ export function QuestionPlayer({ subject, questions, initialQuestionNo }: Props)
                   <Badge className={color.soft} variant="outline">{subject.name}</Badge>
                   <Badge variant={question.isFree ? "success" : "warning"}>{question.questionNo <= FREE_LIMIT_PER_SUBJECT ? "무료 문제" : "회원 전용"}</Badge>
                   <Badge variant={mode === "study" ? "premium" : "dark"}>{mode === "study" ? "학습 모드" : "실전 모드"}</Badge>
-                  {favorite ? <Badge variant="warning">다시 볼 문제</Badge> : null}
+                  {favorite ? <Badge variant="warning">북마크</Badge> : null}
                 </div>
                 <h2 className="mt-1 text-xl font-black tracking-[-0.04em] text-slate-950 sm:text-2xl">{question.questionNo}번 문제</h2>
               </div>
@@ -427,6 +540,13 @@ export function QuestionPlayer({ subject, questions, initialQuestionNo }: Props)
           <CardContent className="p-5 sm:p-8">
             {isLocked ? (
               <LockedQuestion subject={subject} questionNo={question.questionNo} />
+            ) : isSequenceLocked ? (
+              <div className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-6 text-center">
+                <Badge variant="dark" className="mb-3">실전 모드 순차 풀이</Badge>
+                <h3 className="text-2xl font-black tracking-[-0.04em] text-slate-950">이전 문제를 먼저 제출해야 합니다.</h3>
+                <p className="mt-3 text-sm font-semibold leading-6 text-slate-600">실전 모드에서는 {firstUnsubmitted}번 문제까지 순서대로 풀어야 다음 문제로 이동할 수 있습니다.</p>
+                <Button className="mt-5" variant="dark" onClick={() => goTo(firstUnsubmitted)}>현재 풀 차례로 이동</Button>
+              </div>
             ) : (
               <div className="space-y-7">
                 <div className="flex flex-wrap items-center justify-between gap-3">
@@ -465,31 +585,36 @@ export function QuestionPlayer({ subject, questions, initialQuestionNo }: Props)
                 </div>
 
                 <div className="rounded-[1.75rem] border border-slate-200 bg-slate-50/70 p-4 shadow-sm sm:p-5">
-                  <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
-                    <Button onClick={handleCheck} size="lg" variant="premium" className="w-full min-w-[148px] sm:w-auto">
-                      <Check className="size-4" /> 정답 확인
+                  <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">
+                    <Button onClick={handleCheck} size="lg" variant={mode === "study" ? "premium" : "dark"} className="w-full min-w-[148px] sm:w-auto">
+                      <Check className="size-4" /> {mode === "study" ? "채점하기" : currentSubmitted ? "다시 제출" : "답안 제출"}
                     </Button>
-                    <Button variant="outline" size="lg" className="w-full min-w-[132px] sm:w-auto" onClick={() => { setAnswer(emptyAnswer(question)); setResult(null); }}>
-                      <RotateCcw className="size-4" /> 다시 입력
+                    <Button variant="outline" size="lg" className="w-full min-w-[132px] sm:w-auto" onClick={handleRetry}>
+                      <RotateCcw className="size-4" /> 다시 풀기
                     </Button>
-                    <Button variant="outline" size="lg" className="w-full min-w-[148px] sm:w-auto" onClick={handleToggleFavorite}>
-                      <Star className={cn("size-4", favorite ? "fill-amber-400 text-amber-500" : "")} /> {favorite ? "목록에서 해제" : "다시 볼 문제"}
+                    <Button variant="outline" size="lg" className="w-full min-w-[132px] sm:w-auto" onClick={handleToggleFavorite}>
+                      <Star className={cn("size-4", favorite ? "fill-amber-400 text-amber-500" : "")} /> {favorite ? "북마크 해제" : "북마크"}
                     </Button>
-                    {mode === "study" ? (
-                      <Button variant="outline" size="lg" className="w-full min-w-[132px] border-blue-200 bg-blue-50 text-blue-700 hover:bg-blue-100 sm:w-auto" onClick={() => setStudyOpen(true)}>
-                        <BookOpen className="size-4" /> 학습하기
-                      </Button>
+                    {mode === "study" && result === null ? (
+                      <>
+                        <Button variant="outline" size="lg" className="w-full min-w-[132px] border-blue-200 bg-blue-50 text-blue-700 hover:bg-blue-100 sm:w-auto" onClick={() => setStudyOpen(true)}>
+                          <BookOpen className="size-4" /> 개념 보기
+                        </Button>
+                        <Button variant="outline" size="lg" className="w-full min-w-[132px] border-amber-200 bg-amber-50 text-amber-700 hover:bg-amber-100 sm:w-auto" onClick={handleRevealAnswer}>
+                          <Eye className="size-4" /> 정답 보기
+                        </Button>
+                      </>
                     ) : null}
                   </div>
                   <div className="mt-3 flex flex-col gap-1 border-t border-slate-200/70 pt-3 text-sm font-semibold leading-6 text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-                    <span>{mode === "study" ? "정답을 맞히면 해설이 공개됩니다." : "실전 모드에서는 해설을 숨깁니다."}</span>
+                    <span>{mode === "study" ? "채점하기와 정답 보기는 별도로 기록됩니다. 정답 보기는 직접 정답으로 처리되지 않습니다." : currentSubmitted ? "제출한 문제는 내가 쓴 답을 확인할 수 있습니다. 정답과 해설은 실전 완료 후 복습용으로 확인하세요." : "답안을 제출해야 다음 문제로 이동할 수 있습니다."}</span>
                     <span className="text-slate-600">{hasMemberAccess ? "베타 회원 전체 이용 가능" : BETA_UNLOCK_ALL ? "베타 전체 공개" : `무료 잔여 ${freeLeft}문항`}</span>
                   </div>
                 </div>
 
-                <AiVariationPanel subject={subject.id} questionNo={question.questionNo} solvedCorrectly={solvedCorrectlyForAi} />
-
-                {result !== null ? <AnswerResult question={question} isCorrect={result} mode={mode} /> : null}
+                {answerIsVisible ? <AnswerRevealBox question={question} onRetry={handleRetry} /> : null}
+                {result !== null ? <AnswerResult question={question} isCorrect={result} mode={mode} userAnswer={answer} onRetry={handleRetry} onNext={() => goTo(questionNo + 1)} canGoNext={canGoNext} /> : null}
+                {mode === "study" && result === true ? <AiVariationPanel subject={subject.id} questionNo={question.questionNo} solvedCorrectly={solvedCorrectlyForAi} /> : null}
               </div>
             )}
           </CardContent>
@@ -497,7 +622,7 @@ export function QuestionPlayer({ subject, questions, initialQuestionNo }: Props)
 
         <div className="flex items-center justify-between gap-3">
           <Button variant="outline" disabled={questionNo <= 1} onClick={() => goTo(questionNo - 1)} size="lg"><ArrowLeft className="size-4" /> 이전 문제</Button>
-          <Button disabled={questionNo >= questions.length} onClick={() => goTo(questionNo + 1)} size="lg" variant="dark">다음 문제 <ArrowRight className="size-4" /></Button>
+          <Button disabled={!canGoNext} onClick={() => goTo(questionNo + 1)} size="lg" variant="dark">다음 문제 <ArrowRight className="size-4" /></Button>
         </div>
       </section>
 
@@ -556,6 +681,7 @@ export function QuestionPlayer({ subject, questions, initialQuestionNo }: Props)
               <div className="rounded-[1.35rem] bg-blue-50 p-4"><ListChecks className="mb-4 size-5 text-blue-600" /><div className="text-3xl font-black text-blue-700">{solvedCount}</div><div className="mt-1 text-xs font-bold text-blue-700/70">풀이 완료</div></div>
               <div className="rounded-[1.35rem] bg-emerald-50 p-4"><CheckCircle2 className="mb-4 size-5 text-emerald-600" /><div className="text-3xl font-black text-emerald-700">{correctCount}</div><div className="mt-1 text-xs font-bold text-emerald-700/70">정답</div></div>
               <div className="rounded-[1.35rem] bg-red-50 p-4"><XCircle className="mb-4 size-5 text-red-600" /><div className="text-3xl font-black text-red-700">{wrongCount}</div><div className="mt-1 text-xs font-bold text-red-700/70">오답</div></div>
+              <div className="rounded-[1.35rem] bg-amber-50 p-4"><Eye className="mb-4 size-5 text-amber-600" /><div className="text-3xl font-black text-amber-700">{revealedCount}</div><div className="mt-1 text-xs font-bold text-amber-700/70">답 봄</div></div>
               <div className="rounded-[1.35rem] bg-violet-50 p-4"><Clock3 className="mb-4 size-5 text-violet-600" /><div className="text-3xl font-black text-violet-700">{formatTime(elapsed)}</div><div className="mt-1 text-xs font-bold text-violet-700/70">시간</div></div>
             </div>
             <div className="mt-6 rounded-2xl border border-slate-100 bg-slate-50 p-4"><div className="mb-3 flex items-center justify-between text-sm font-bold"><span>전체 진도</span><span>{progressPercent}%</span></div><Progress value={progressPercent} indicatorClassName={`bg-gradient-to-r ${color.progress}`} /></div>
@@ -571,7 +697,7 @@ export function QuestionPlayer({ subject, questions, initialQuestionNo }: Props)
             <div className="relative"><Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-slate-400" /><Input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="번호, 단원, 키워드 검색" className="h-11 rounded-2xl bg-slate-50 pl-9" /></div>
             <div className="grid grid-cols-2 gap-2">
               <select value={typeFilter} onChange={(event) => setTypeFilter(event.target.value as TypeFilter)} className="h-10 rounded-2xl border border-slate-200 bg-white px-3 text-xs font-bold text-slate-700"><option value="all">전체 유형</option>{types.map((type) => <option key={type} value={type}>{getQuestionTypeLabel(type)}</option>)}</select>
-              <select value={statusFilter} onChange={(event) => setStatusFilter(event.target.value as StatusFilter)} className="h-10 rounded-2xl border border-slate-200 bg-white px-3 text-xs font-bold text-slate-700"><option value="all">전체 상태</option><option value="unsolved">안 푼 문제</option><option value="correct">정답 문제</option><option value="wrong">오답 문제</option><option value="free">공개 문제</option><option value="locked">잠금 문제</option></select>
+              <select value={statusFilter} onChange={(event) => setStatusFilter(event.target.value as StatusFilter)} className="h-10 rounded-2xl border border-slate-200 bg-white px-3 text-xs font-bold text-slate-700"><option value="all">전체 상태</option><option value="unsolved">안 푼 문제</option><option value="correct">정답 문제</option><option value="wrong">오답 문제</option><option value="revealed">답 본 문제</option><option value="free">공개 문제</option><option value="locked">잠금 문제</option></select>
             </div>
             <div className="rounded-2xl bg-slate-50 p-3 text-xs font-semibold leading-5 text-slate-500">
               <span className="font-black text-slate-700">유형 안내</span> · 단답형, SQL 작성형, 결과표 작성형, 서술·실행결과형으로 구분됩니다.
@@ -582,11 +708,20 @@ export function QuestionPlayer({ subject, questions, initialQuestionNo }: Props)
 
         <Card>
           <CardContent className="p-6 sm:p-7">
-            <div className="mb-5 flex items-center justify-between gap-3"><div><div className="flex items-center gap-2 text-sm font-black text-slate-950"><Grid3X3 className="size-4" /> 문제 번호 이동</div><p className="mt-1 text-xs font-semibold text-slate-500">필터 결과 {filteredQuestions.length}문항 · 초록 정답 · 빨강 오답 · 노랑 잠금</p></div></div>
+            <div className="mb-5 flex items-center justify-between gap-3"><div><div className="flex items-center gap-2 text-sm font-black text-slate-950"><Grid3X3 className="size-4" /> 문제 번호 이동</div><p className="mt-1 text-xs font-semibold text-slate-500">필터 결과 {filteredQuestions.length}문항 · 초록 정답 · 빨강 오답 · 노랑 답 봄 · 자물쇠 잠금</p></div></div>
             <div className="grid max-h-[520px] grid-cols-5 gap-2 overflow-y-auto pr-1 sm:grid-cols-6 lg:grid-cols-5">
               {filteredQuestions.map((item) => {
                 const locked = BETA_UNLOCK_ALL ? false : (!hasMemberAccess && item.questionNo > FREE_LIMIT_PER_SUBJECT);
-                return <button key={item.questionNo} onClick={() => goTo(item.questionNo)} className={`relative h-10 rounded-xl border text-sm font-black transition ${questionNo === item.questionNo ? "ring-2 ring-blue-500 ring-offset-2" : ""} ${locked ? "border-amber-200 bg-amber-50 text-amber-700 hover:bg-amber-100" : statusClass(statusMap[item.questionNo])}`} title={locked ? "회원가입 후 이용 가능" : `${item.questionNo}번`}>{locked ? <LockKeyhole className="mx-auto size-4" /> : item.questionNo}</button>;
+                const sequenceLocked = mode === "exam" && item.questionNo > firstUnsubmitted;
+                const status = statusMap[item.questionNo];
+                const revealedOnly = !status && revealedMap[item.questionNo];
+                const buttonClass = locked || sequenceLocked
+                  ? "border-slate-200 bg-slate-100 text-slate-400"
+                  : revealedOnly
+                    ? revealedClass()
+                    : statusClass(status);
+                const title = locked ? "회원가입 후 이용 가능" : sequenceLocked ? "이전 문제 제출 후 이동 가능" : revealedOnly ? `${item.questionNo}번 · 답 봄` : `${item.questionNo}번`;
+                return <button key={item.questionNo} disabled={locked || sequenceLocked} onClick={() => goTo(item.questionNo)} className={`relative h-10 rounded-xl border text-sm font-black transition disabled:cursor-not-allowed ${questionNo === item.questionNo ? "ring-2 ring-blue-500 ring-offset-2" : ""} ${buttonClass}`} title={title}>{locked || sequenceLocked ? <LockKeyhole className="mx-auto size-4" /> : item.questionNo}</button>;
               })}
             </div>
           </CardContent>
@@ -610,10 +745,10 @@ export function QuestionPlayer({ subject, questions, initialQuestionNo }: Props)
             <div className="max-h-[calc(88vh-132px)] overflow-y-auto p-5 sm:p-7">
               <div className="mb-5 rounded-[1.5rem] border border-blue-100 bg-blue-50 p-5">
                 <div className="mb-3 flex items-center gap-2 text-sm font-black text-blue-800">
-                  <BookOpen className="size-4" /> 학습하기 사용법
+                  <BookOpen className="size-4" /> 개념 보기 사용법
                 </div>
                 <p className="text-sm font-semibold leading-7 text-blue-950">
-                  {subject.id === "linux" ? "이 창은 정답을 바로 알려주지 않습니다. 대신 문제에서 봐야 할 단서, 풀이 순서, 실수 포인트, 필수 명령어 도감을 제공해 다시 문제로 돌아가 스스로 풀 수 있게 돕습니다." : "이 창은 정답을 계산해 주지 않습니다. 실제 강사가 옆에서 설명하듯, 지금 문제를 풀기 전에 봐야 할 단서·핵심 이론·비슷한 예시·풀이 순서를 정리합니다."}
+                  {subject.id === "linux" ? "이 창은 정답을 바로 알려주지 않습니다. 대신 문제에서 봐야 할 단서, 풀이 순서, 실수 포인트, 필수 명령어 도감을 제공해 다시 문제로 돌아가 스스로 풀 수 있게 돕습니다." : "이 창은 정답을 바로 알려주지 않습니다. 실제 강사가 옆에서 설명하듯, 지금 문제를 풀기 전에 봐야 할 단서·핵심 이론·비슷한 예시·풀이 순서를 정리합니다."}
                 </p>
               </div>
 
@@ -700,8 +835,8 @@ export function QuestionPlayer({ subject, questions, initialQuestionNo }: Props)
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 p-3 shadow-[0_-18px_50px_rgba(15,23,42,0.12)] backdrop-blur lg:hidden">
         <div className="mx-auto grid max-w-2xl grid-cols-[1fr_1.4fr_1fr] gap-2">
           <Button variant="outline" disabled={questionNo <= 1} onClick={() => goTo(questionNo - 1)} size="md">이전</Button>
-          <Button onClick={handleCheck} size="md" variant="premium" disabled={isLocked}><Check className="size-4" /> 정답 확인</Button>
-          <Button disabled={questionNo >= questions.length} onClick={() => goTo(questionNo + 1)} size="md" variant="dark">다음</Button>
+          <Button onClick={handleCheck} size="md" variant={mode === "study" ? "premium" : "dark"} disabled={isLocked || isSequenceLocked}><Check className="size-4" /> {mode === "study" ? "채점하기" : "제출"}</Button>
+          <Button disabled={!canGoNext} onClick={() => goTo(questionNo + 1)} size="md" variant="dark">다음</Button>
         </div>
       </div>
     </div>

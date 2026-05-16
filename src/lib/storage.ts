@@ -5,6 +5,7 @@ import type {
   MockExamResult,
   ProgressItem,
   ProgressStatus,
+  AnswerReveal,
   QuestionMemo,
   SubjectId,
   UserAnswer,
@@ -19,6 +20,7 @@ const FAVORITES_KEY = "psb:favorites";
 const MEMOS_KEY = "psb:memos";
 const REPORTS_KEY = "psb:issue-reports";
 const MOCK_RESULTS_KEY = "psb:mock-exam-results";
+const ANSWER_REVEALS_KEY = "psb:answer-reveals";
 
 function canUseStorage() {
   return typeof window !== "undefined" && typeof window.localStorage !== "undefined";
@@ -67,6 +69,30 @@ export function saveProgress(subject: SubjectId, questionNo: number, status: Pro
     updatedAt: new Date().toISOString()
   };
   writeJson(PROGRESS_KEY, progress);
+}
+
+export function getProgressItem(subject: SubjectId, questionNo: number) {
+  return getProgress()[keyOf(subject, questionNo)];
+}
+
+export function getAnswerReveals() {
+  return readJson<Record<string, AnswerReveal>>(ANSWER_REVEALS_KEY, {});
+}
+
+export function getSubjectAnswerReveals(subject: SubjectId) {
+  const reveals = getAnswerReveals();
+  return Object.values(reveals).filter((item) => item.subject === subject);
+}
+
+export function saveAnswerReveal(subject: SubjectId, questionNo: number) {
+  const reveals = getAnswerReveals();
+  const key = keyOf(subject, questionNo);
+  reveals[key] = {
+    subject,
+    questionNo,
+    revealedAt: new Date().toISOString()
+  };
+  writeJson(ANSWER_REVEALS_KEY, reveals);
 }
 
 export function saveLastQuestion(subject: SubjectId, questionNo: number) {
